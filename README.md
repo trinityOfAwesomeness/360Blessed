@@ -1,2 +1,0 @@
-# 360Blessed
-Shared Account
