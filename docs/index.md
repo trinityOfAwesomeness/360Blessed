@@ -1,3 +1,3 @@
 
-This is are team website!
+This is our team website!
 TODO!!
