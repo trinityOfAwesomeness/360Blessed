@@ -1,2 +1,11 @@
 The team's task matrix can be found at:
 <https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0>
+
+The team's minutes can be found at:
+<https://docs.google.com/document/d/1VuHiAVWgwR0IRgm4SgcGb2AdXvTUUsrBSnJY5_ZS8uc/edit>
+
+TEST:
+<iframe
+  src="https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0"
+  style="width:100%; height:300px;"
+></iframe>
