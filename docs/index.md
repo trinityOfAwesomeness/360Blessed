@@ -13,8 +13,6 @@ This is [our teams task matrix](https://docs.google.com/spreadsheets/d/1Dxx__lm9
 <iframe
   src="https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0"
   style="width:100%; height:500px;"
-</iframe>>
-
-
+</iframe>
 
 Last Update: 4/21/2020
