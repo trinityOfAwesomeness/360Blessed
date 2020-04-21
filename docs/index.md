@@ -1,6 +1,7 @@
 
 <strong>Team Name</strong>: Trinity of Awesomeness<br/>
 <strong>Team Members</strong>: Adam Hall,  Seoungdeok Jeon, Tatiana Linardopoulou<br/>
+<strong>Team Email</strong>: tslinard@uw.edu
 
 <a href="https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0" target="_blank">Team task matrix:</a>
 <iframe
