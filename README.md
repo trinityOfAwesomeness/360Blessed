@@ -1,5 +1,5 @@
-### Link to <a href="https://trinityofawesomeness.github.io/360Blessed/" target="_blank">Team Website</a>
-[go](http://stackoverflow.com){:target="_blank" rel="noopener"}
+### Link to <a href="https://trinityofawesomeness.github.io/360Blessed/" target="_blank" rel="noopener">Team Website</a>
+
 # Project Title
 
 One Paragraph of project description goes here
