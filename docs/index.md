@@ -7,5 +7,5 @@ The team's minutes can be found at:
 TEST:
 <iframe
   src="https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0"
-  style="width:100%; height:300px;"
+  style="width:100%; height:500px;"
 ></iframe>
