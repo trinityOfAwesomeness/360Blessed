@@ -9,7 +9,7 @@ The team's minutes can be found at:
 <https://docs.google.com/document/d/1VuHiAVWgwR0IRgm4SgcGb2AdXvTUUsrBSnJY5_ZS8uc/edit>
 
 TESTING:
-[link](https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0 "Task Matrix")){:target="_blank"}
+<a href="https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0" target="_blank">Our team's task matrix.</a>
 
 This is [our teams task matrix](https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0 "Task Matrix").
 <iframe
