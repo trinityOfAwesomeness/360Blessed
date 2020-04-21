@@ -1,4 +1,4 @@
-### Link to <a href="https://trinityofawesomeness.github.io/360Blessed/" target="_blank">Team Website /a>
+### Link to [Team Website](https://trinityofawesomeness.github.io/360Blessed/)
 
 # Project Title
 
