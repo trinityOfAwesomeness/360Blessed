@@ -15,7 +15,7 @@
   style="width:100%; height:500px;"
 ></iframe>
 
-<a href="https://docs.google.com/presentation/d/1U5o4SJzmj-xRVAMoM6KkF1JahpoqXOP4Zp4TswFPpjA/edit#slide=id.p"> <strong>Prototype</strong></a>
+<a href="https://docs.google.com/presentation/d/1U5o4SJzmj-xRVAMoM6KkF1JahpoqXOP4Zp4TswFPpjA/edit#slide=id.p"> <strong>Link to prototype</strong></a><br/>
   
 Last Update: 4/22/2020
 
