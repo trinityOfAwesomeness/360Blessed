@@ -7,6 +7,11 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * Class to build Content Panel with folders for GUI.
+ * @author Seoungdeok Jeon
+ *
+ */
 public class ContentPanel extends JPanel {
 
 	private JLabel Folder1;
@@ -15,6 +20,10 @@ public class ContentPanel extends JPanel {
 	private JLabel Folder4;
 	private JLabel Folder5;
 	
+	/**
+	 * Constructor for ContentPanel object.
+	 * Builds content Panel with folders.
+	 */
 	public ContentPanel() {
 		setLayout(new GridLayout(5, 1));
 		Folder1 = new JLabel("Folder1");

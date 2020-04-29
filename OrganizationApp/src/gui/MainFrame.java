@@ -17,15 +17,28 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
 
+/**
+ * Class to build Main frame of GUI.
+ * @author Seoungdeok Jeon
+ * @author Tatiana Linardopoulou
+ *
+ */
 public class MainFrame extends JFrame implements ActionListener {
 
 	private ContentPanel contentPanel;
 	private SidePanel sidePanel;
 	private JToolBar toolBar;
     private JMenuItem myAboutMenu;
+    private ProjectVersion myProjectVersion;
 	
-	public MainFrame() {
+    /**
+     * Constructor for Mainframe object.
+     * Creates Mainframe and components.
+     * @param the version the program version
+     */
+	public MainFrame(ProjectVersion theVersion) {
 		
+		myProjectVersion = theVersion;
 		contentPanel = new ContentPanel();
 		sidePanel = new SidePanel();
 		toolBar = new JToolBar();
@@ -45,6 +58,11 @@ public class MainFrame extends JFrame implements ActionListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
+	/**
+	 * Constructor for menuBar object.
+	 * Creates menuBar and adds menu bar components.
+	 * @return menuBar the menu bar
+	 */
 	public JMenuBar createMenuBar() {
 		JMenuBar menuBar = new JMenuBar();
 		JMenu fileMenu = new JMenu("File");
@@ -64,8 +82,9 @@ public class MainFrame extends JFrame implements ActionListener {
 	}
     
 	/**
-	 * Creates pop-up message with info when user click about Program tab in About Menu 
-	 * @author Tatiana Linardopoulou
+	 * Creates pop-up message with info when user clicks about Program tab in About Menu.
+	 * Info includes developer names and version. 
+	 * @param theEvent the action event
 	 */
 	@Override
 	public void actionPerformed(ActionEvent theEvent) {
@@ -73,10 +92,9 @@ public class MainFrame extends JFrame implements ActionListener {
 			JOptionPane.showMessageDialog(this, "Developers:\n"
 					+ "Adam Hall\n"
 					+ "Seoungdeok Jeon\n"
-					+ "Tatiana Linardopoulou\n");
+					+ "Tatiana Linardopoulou\n\n"
+					+ "Version: " + myProjectVersion.getVersion());
 
 		}
-	}
-
-	
+	}	
 }
