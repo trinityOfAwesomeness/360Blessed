@@ -15,9 +15,9 @@
   style="width:100%; height:500px;"
 ></iframe>
 
-<a href="https://drive.google.com/file/d/1zSCXoBuWMKqr_jvfUZW668Gtgox0TBP-/view"><strong>Domain Class and Sequence Diagram</strong></a>
+<a href="https://drive.google.com/file/d/1zSCXoBuWMKqr_jvfUZW668Gtgox0TBP-/view"><strong>Link: Domain Class and Sequence Diagram</strong></a>
 <br/>
-<a href="https://docs.google.com/presentation/d/1U5o4SJzmj-xRVAMoM6KkF1JahpoqXOP4Zp4TswFPpjA/edit#slide=id.p"> <strong>Link to prototype</strong></a><br/>
+<a href="https://docs.google.com/presentation/d/1U5o4SJzmj-xRVAMoM6KkF1JahpoqXOP4Zp4TswFPpjA/edit#slide=id.p"> <strong>Link: Prototype</strong></a><br/>
   
 Last Update: 4/22/2020
 
