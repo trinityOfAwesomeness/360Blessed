@@ -17,7 +17,7 @@
 
 <a href="https://drive.google.com/file/d/1zSCXoBuWMKqr_jvfUZW668Gtgox0TBP-/view">Domain Class and Sequence Diagram:</a>
 <iframe
-  src="https://pdfhost.io/edit?doc=698f4bd9-e186-4528-b2cf-29ffe4504b9b"
+  src="https://pdfhost.io/v/Bbc4q7sah_DomainClassesAndSystemSequenceDiagram_1pdf.pdf"
   style="width:100%; height:500px;"
 ></iframe>
 
