@@ -7,7 +7,7 @@ import static org.junit.Assert.assertNotEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import gui.ProjectVersion;
+import model.ProjectVersion;
 
 /**
  * This class tests the functionality for our version method that populates

@@ -1,4 +1,4 @@
-package gui;
+package model;
 
 /**
  * Class for version objects. Has methods to set/get program version.

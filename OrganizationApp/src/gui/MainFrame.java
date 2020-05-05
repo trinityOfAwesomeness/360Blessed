@@ -1,34 +1,32 @@
 package gui;
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JToolBar;
+
+import controller.Controller;
+import model.File;
+import model.Folder;
+import model.ProjectVersion;
 
 /**
  * Class to build Main frame of GUI.
+ * It interacts with controller.
+ * 
  * @author Seoungdeok Jeon
  * @author Tatiana Linardopoulou
- *
  */
-public class MainFrame extends JFrame implements ActionListener {
+public class MainFrame extends JFrame {
 
-	private ContentPanel contentPanel;
-	private SidePanel sidePanel;
-	private JToolBar toolBar;
-    private JMenuItem myAboutMenu;
+	private Controller myController;
+	private ContentPanel myContentPanel;
+	private SidePanel mySidePanel;
+	private ToolBar myToolBar;
     private ProjectVersion myProjectVersion;
 	
     /**
@@ -38,23 +36,41 @@ public class MainFrame extends JFrame implements ActionListener {
      */
 	public MainFrame(ProjectVersion theVersion) {
 		
+		myController = new Controller();
 		myProjectVersion = theVersion;
-		contentPanel = new ContentPanel();
-		sidePanel = new SidePanel();
-		toolBar = new JToolBar();
+		myContentPanel = new ContentPanel();
+		mySidePanel = new SidePanel();
+		myToolBar = new ToolBar(this);
 		setLayout(new BorderLayout());
 		
-		toolBar.add(new JButton("+ Folder"));
-		toolBar.add(new JButton("+ File"));
+		myContentPanel.setData(myController.getData());
+		
+		// Since MainFrame is the only view class that can interact with the controller,
+		// it adds functionality for tool bar.
+		myToolBar.setToolBarListener(new ToolBarListener() {
+			@Override
+			public void addFolderEventOccurred(Folder folder) {
+				myController.addFolder(folder);
+				myContentPanel.update();
+			}
+
+			@Override
+			public void addFileEventOccurred(File file) {
+				myController.addFile(file);
+				myContentPanel.update();
+			}
+		});
+		
 		
 		setJMenuBar(createMenuBar());
-		add(contentPanel, BorderLayout.CENTER);
-		add(sidePanel, BorderLayout.WEST);
-		add(toolBar, BorderLayout.NORTH);
+		add(myContentPanel, BorderLayout.CENTER);
+		add(mySidePanel, BorderLayout.WEST);
+		add(myToolBar, BorderLayout.NORTH);
 		
-		setSize(1000, 700);
+
 		setTitle("Organization App");
 		setVisible(true);
+		setSize(1000, 700);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
@@ -70,31 +86,24 @@ public class MainFrame extends JFrame implements ActionListener {
 		
 		JMenuItem add = new JMenuItem("add");
 		JMenuItem remove = new JMenuItem("remove");
-		myAboutMenu = new JMenuItem("About Program");
-		myAboutMenu.addActionListener(this);
+		JMenuItem aboutProgram = new JMenuItem("About Program");
+		aboutProgram.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(MainFrame.this, "Developers:\n"
+						+ "Adam Hall\n"
+						+ "Seoungdeok Jeon\n"
+						+ "Tatiana Linardopoulou\n\n"
+						+ "Version: " + myProjectVersion.getVersion());
+			}
+		});
 		
-		aboutMenu.add(myAboutMenu);
+		aboutMenu.add(aboutProgram);
 		fileMenu.add(add);
 		fileMenu.add(remove);
 		menuBar.add(fileMenu);
 		menuBar.add(aboutMenu);
 		return menuBar;
 	}
-    
-	/**
-	 * Creates pop-up message with info when user clicks about Program tab in About Menu.
-	 * Info includes developer names and version. 
-	 * @param theEvent the action event
-	 */
-	@Override
-	public void actionPerformed(ActionEvent theEvent) {
-		if (theEvent.getSource().equals(myAboutMenu)) {
-			JOptionPane.showMessageDialog(this, "Developers:\n"
-					+ "Adam Hall\n"
-					+ "Seoungdeok Jeon\n"
-					+ "Tatiana Linardopoulou\n\n"
-					+ "Version: " + myProjectVersion.getVersion());
 
-		}
-	}	
 }
