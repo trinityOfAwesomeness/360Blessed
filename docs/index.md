@@ -20,8 +20,5 @@
   style="width:100%; height:500px;"
 ></iframe>
 
-testing below
-[link](trinityOfAwesomeness/360Blessed/docs/testingagain.md#section)
-
 Last Update: 5/01/2020
 
