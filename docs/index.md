@@ -5,7 +5,7 @@
 
 <a href="https://drive.google.com/file/d/1zSCXoBuWMKqr_jvfUZW668Gtgox0TBP-/view"><strong>Link: Domain Class and Sequence Diagram</strong></a>
 <br/>
-<a href="https://docs.google.com/presentation/d/1U5o4SJzmj-xRVAMoM6KkF1JahpoqXOP4Zp4TswFPpjA/edit#slide=id.p"> <strong>Link: Prototype</strong></a><br/>
+<a href="https://docs.google.com/presentation/d/1U5o4SJzmj-xRVAMoM6KkF1JahpoqXOP4Zp4TswFPpjA/edit#slide=id.p"> <strong>Link: Prototype</strong></a>
 <br/>
 <a href="https://drive.google.com/drive/u/2/folders/1X33yAa5mW-aeYysF1n2c6aykbLpmcLll"> <strong>Link: Deliverable 1</strong></a>
 <br/>
