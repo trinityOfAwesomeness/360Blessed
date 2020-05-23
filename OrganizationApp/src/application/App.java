@@ -1,8 +1,6 @@
 package application;
 import javax.swing.SwingUtilities;
-
 import gui.MainFrame;
-import model.ProjectVersion;
 
 /**
  * Class to run App.
