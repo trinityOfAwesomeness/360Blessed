@@ -13,6 +13,7 @@ import controller.Controller;
 import model.File;
 import model.Folder;
 import model.ProjectVersion;
+import model.Settings;
 
 /**
  * Class to build Main frame of GUI.
@@ -28,6 +29,7 @@ public class MainFrame extends JFrame {
 	private SidePanel mySidePanel;
 	private ToolBar myToolBar;
     private ProjectVersion myProjectVersion;
+    private Settings mySettings;
 	
     /**
      * Constructor for Mainframe object.
@@ -82,10 +84,29 @@ public class MainFrame extends JFrame {
 	public JMenuBar createMenuBar() {
 		JMenuBar menuBar = new JMenuBar();
 		JMenu fileMenu = new JMenu("File");
+		JMenu settingsMenu = new JMenu("Settings");
 		JMenu aboutMenu = new JMenu("About");
 		
 		JMenuItem add = new JMenuItem("add");
 		JMenuItem remove = new JMenuItem("remove");
+		JMenuItem setSettings = new JMenuItem("Set Settings");
+		
+		setSettings.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String name = (String)JOptionPane.showInputDialog("Set Name");
+				String email = (String)JOptionPane.showInputDialog("Set Email");
+				mySettings = new Settings(name, email);
+			}
+		});
+		
+		JMenuItem getSettings = new JMenuItem("Get Settings");
+		getSettings.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(MainFrame.this, "Name: "
+						+ mySettings.getName() + "\nEmail: " + mySettings.getEmail());
+			}
+		});
 		JMenuItem aboutProgram = new JMenuItem("About Program");
 		aboutProgram.addActionListener(new ActionListener() {
 			@Override
@@ -101,7 +122,10 @@ public class MainFrame extends JFrame {
 		aboutMenu.add(aboutProgram);
 		fileMenu.add(add);
 		fileMenu.add(remove);
+		settingsMenu.add(setSettings);
+		settingsMenu.add(getSettings);
 		menuBar.add(fileMenu);
+		menuBar.add(settingsMenu);
 		menuBar.add(aboutMenu);
 		return menuBar;
 	}
