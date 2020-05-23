@@ -21,6 +21,6 @@ public class Settings {
 	}
 	
 	public String toString() {
-		return myUserName + myUserEmail;
+		return myUserName + " " + myUserEmail;
 	}
 }
