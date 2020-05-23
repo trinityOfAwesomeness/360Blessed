@@ -1,10 +1,12 @@
 package controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import model.Data;
 import model.Database;
-import model.File;
+import model.FileClass;
 import model.Folder;
 import model.Settings;
 
@@ -18,32 +20,55 @@ public class Controller {
 	Database myDataBase = new Database();
 	Settings mySettings = new Settings(null, null);
 	
-	public List<Data> getData() {
+	/**
+	 * Get list of data (folder or file) from the model,
+	 * and ideally send it to the view.
+	 * 
+	 * @return list of data from the model
+	 */
+	public List<Data> getDataList() {
 		return myDataBase.getData();
 	}
 	
+	/**
+	 * Add a new folder to the data list.
+	 * 
+	 * @param folder - new folder to be added
+	 */
 	public void addFolder(Folder folder) {
 		myDataBase.addFolder(folder);
 	}
 	
-	public void removeFolder(int index) {
-		myDataBase.removeFolder(index);
+	/**
+	 * Add a new file to the data list.
+	 * 
+	 * @param file - new file to be added
+	 */
+	public void addFile(FileClass file) {
+		myDataBase.addFile(file);
 	}
 	
-	public void addFile(File folder) {
-		myDataBase.addFile(folder);
+	/**
+	 * Remove a data, which is at the given index.
+	 * 
+	 * @param index - the index of a data to be removed
+	 */
+	public void removeData(int index) {
+		myDataBase.removeData(index);
 	}
 	
-	public void removeFile(int index) {
-		myDataBase.removeFile(index);
+	public Settings getSettings() {
+		return myDataBase.getSettings();
+	}
+	public double getProjectVersion() {
+		return myDataBase.getProjectVersion();
+	}
+
+	public void loadSettingsFromFile(File file) throws IOException {
+		myDataBase.loadSettingsFromFile(file);
 	}
 	
-	public void setName(String theName) {
-		mySettings.setName(theName);
+	public void saveSettingsToFile(File file) throws IOException {
+		myDataBase.saveSettingsToFile(file);
 	}
-	
-	public void setEmail(String theEmail) {
-		mySettings.setName(theEmail);
-	}
-	
 }

@@ -15,7 +15,7 @@ import javax.swing.JScrollPane;
 
 import application.App;
 import model.Data;
-import model.File;
+import model.FileClass;
 import model.Folder;
 
 /**
@@ -26,15 +26,13 @@ public class ContentPanel extends JPanel {
 
 	private List<Data> myDataList;
 	private JPanel myContentPanel;
-
+	
 	/**
 	 * Constructor for ContentPanel object.
 	 * Builds content Panel with folders.
 	 */
 	public ContentPanel() {
-		
 		myContentPanel = new JPanel();
-		
 		setLayout(new BorderLayout());
 		String title = String.format("%-80s%-86s%s", "Name", "Date Created", "Type"); 
 		JLabel colName = new JLabel(title);
@@ -48,7 +46,7 @@ public class ContentPanel extends JPanel {
 	}
 
 	/**
-	 * Updates the contentPanel with elements in db.
+	 * Updates the contentPanel with elements in myDataList.
 	 */
 	public void update() {
 		myContentPanel.removeAll();
@@ -67,7 +65,7 @@ public class ContentPanel extends JPanel {
 				folderLabel.setIcon(folderIcon);
 				folderLabel.setBorder(BorderFactory.createEtchedBorder());
 				myContentPanel.add(folderLabel);
-			} else if (data instanceof File) {
+			} else if (data instanceof FileClass) {
 				ImageIcon fileIcon = new ImageIcon(Toolkit.getDefaultToolkit().
 						getImage(App.class.getResource("/ic_file.png")));
 

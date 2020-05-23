@@ -5,13 +5,13 @@ package model;
  * 
  * @author Seoungdeok Jeon
  */
-public class File implements Data {
+public class FileClass implements Data {
 	
 	String myName;
 	String myDateCreated;
 	String myType;
 	
-	public File(String fileName) {
+	public FileClass(String fileName) {
 		this.myName = fileName;
 	}
 

@@ -2,7 +2,7 @@ package gui;
 
 import java.util.EventListener;
 
-import model.File;
+import model.FileClass;
 import model.Folder;
 
 /**
@@ -12,5 +12,5 @@ import model.Folder;
  */
 public interface ToolBarListener extends EventListener {
 	public void addFolderEventOccurred(Folder theFolder);
-	public void addFileEventOccurred(File theFile);
+	public void addFileEventOccurred(FileClass theFile);
 }
