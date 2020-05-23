@@ -1,6 +1,6 @@
 package model;
 
-public class Png extends File{
+public class Png extends FileClass{
 
 	public Png(String fileName) {
 		super(fileName);

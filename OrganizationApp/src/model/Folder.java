@@ -12,7 +12,7 @@ public class Folder implements Data {
 	String myName;
 	String myDateCreated;
 	String myType;
-	List<Data> myDataList;	// data can be file or folder
+	List<Data> myDataList;	// folder can contain file or another folder
 	
 	public Folder(String folderName) {
 		this.myName = folderName;

@@ -13,15 +13,13 @@ import model.ProjectVersion;
 public class App {
 
 	/**
-	 * Runs GUI and sets Project Version.
+	 * Runs GUI.
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				ProjectVersion version = new ProjectVersion();
-				version.setVersion(1.1);
-				new MainFrame(version);
+				new MainFrame();
 			}
 		});
 		
