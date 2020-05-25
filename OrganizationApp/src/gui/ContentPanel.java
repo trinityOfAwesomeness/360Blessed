@@ -2,17 +2,18 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.List;
-
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-
 import application.App;
 import model.Data;
 import model.FileClass;
@@ -26,7 +27,7 @@ public class ContentPanel extends JPanel {
 
 	private List<Data> myDataList;
 	private JPanel myContentPanel;
-	
+
 	/**
 	 * Constructor for ContentPanel object.
 	 * Builds content Panel with folders.
@@ -77,6 +78,19 @@ public class ContentPanel extends JPanel {
 				JLabel fileLabel = new JLabel(data.getName());
 				fileLabel.setIcon(fileIcon);
 				fileLabel.setBorder(BorderFactory.createEtchedBorder());
+				// open file
+				fileLabel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						try {
+							Desktop.getDesktop().open(((FileClass) data).getFile());
+						} catch (Exception e1) {
+							e1.printStackTrace();
+
+						}
+					}
+
+				});
 				myContentPanel.add(fileLabel);
 			}
 		}

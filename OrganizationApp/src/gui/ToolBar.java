@@ -1,18 +1,12 @@
 package gui;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.BorderFactory;
+import java.io.File;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.JToolBar;
 
 import model.FileClass;
@@ -51,22 +45,17 @@ public class ToolBar extends JToolBar {
 
 		myAddFileBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String name = (String)JOptionPane.showInputDialog(
-						theFrame,
-						"",
-						"Create new file",
-						JOptionPane.PLAIN_MESSAGE,
-						null,
-						null,
-						"New File");
+				// JOptionPane.showMessageDialog(null, jOptionPanel(), "Information",JOptionPane.DEFAULT_OPTION);
 
-				//JOptionPane.showMessageDialog(null, jOptionPanel(), "Information",JOptionPane.DEFAULT_OPTION);
+				JFileChooser fileChooser = new JFileChooser();
+				File selectedfile = null;
+				if (fileChooser.showOpenDialog(theFrame) == JFileChooser.APPROVE_OPTION) {
+					selectedfile = fileChooser.getSelectedFile();
+				}
 
-				if ((name != null) && (name.length() > 0)) {
-					FileClass file = new FileClass(name);
-					if (myToolBarListener != null) {
-						myToolBarListener.addFileEventOccurred(file);
-					}
+				FileClass file = new FileClass(selectedfile);
+				if (myToolBarListener != null) {
+					myToolBarListener.addFileEventOccurred(file);
 				}
 			}
 		});
@@ -78,18 +67,38 @@ public class ToolBar extends JToolBar {
 	public void setToolBarListener(ToolBarListener theListener) {
 		myToolBarListener = theListener;
 	}
-//
-//	private JPanel jOptionPanel() {
+
+//	private JPanel jOptionPanel(JFrame theFrame) {
 //		JPanel MainPanel = new JPanel();
-//		JPanel panel = new JPanel();
-//		JPanel panel2 = new JPanel();
 //		MainPanel.setLayout(new BorderLayout());
-//		panel.add(new JButton("Click"));
-//		panel.setBorder(BorderFactory.createLineBorder(Color.black));
+//
+//		JPanel loadPanel = new JPanel();
+//		loadPanel.setLayout(new BorderLayout());
+//		
+//		JPanel panel2 = new JPanel();
+//
+//		JButton loadFile = new JButton("load file");
+//		loadFile.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				JFileChooser fileChooser = new JFileChooser();
+//				File selectedfile = null;
+//				if (fileChooser.showOpenDialog(theFrame) == JFileChooser.APPROVE_OPTION) {
+//					selectedfile = fileChooser.getSelectedFile();
+//				}
+//				FileClass file = new FileClass(selectedfile);
+//			}
+//		});
+//		
+//		loadPanel.add(loadFile);
+//		loadPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+//
+//
 //		panel2.add(new JTextField(20));
 //		panel2.add(new JLabel("Label"));
 //		panel2.setBorder(BorderFactory.createLineBorder(Color.black));
-//		MainPanel.add(panel, BorderLayout.NORTH);
+//
+//
+//		MainPanel.add(loadPanel, BorderLayout.NORTH);
 //		MainPanel.add(panel2, BorderLayout.CENTER);
 //		MainPanel.setPreferredSize(new Dimension(500,500));
 //		MainPanel.setBorder(BorderFactory.createLineBorder(Color.black));
