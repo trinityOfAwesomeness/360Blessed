@@ -48,6 +48,13 @@ public class Folder implements Data {
 		myDataList.add(theFile);
 	}
 	
+	public void removeFolder(Folder theFolder) {
+		myDataList.remove(theFolder);
+	}
+	
+	public void removeFile(FileClass theFile) {
+		myDataList.remove(theFile);
+	}
 	public String toString() {
 		return myName;
 	}

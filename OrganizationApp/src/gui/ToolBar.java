@@ -22,6 +22,8 @@ public class ToolBar extends JToolBar {
 	private JFrame myFrame;
 	private JButton myAddFolderBtn;
 	private JButton myAddFileBtn;
+	private JButton myRemoveFolderBtn;
+	private JButton myRemoveFileBtn;
 	private JButton myBackBtn;
 	private JButton myHomeBtn;
 	
@@ -31,6 +33,8 @@ public class ToolBar extends JToolBar {
 		myFrame = theFrame;
 		myAddFolderBtn = new JButton();
 		myAddFileBtn = new JButton();
+		myRemoveFolderBtn = new JButton();
+		myRemoveFileBtn = new JButton();
 		myBackBtn = new JButton();
 		myHomeBtn = new JButton();
 		ImageIcon addFolderIcon = new ImageIcon(Toolkit.getDefaultToolkit().
@@ -49,6 +53,24 @@ public class ToolBar extends JToolBar {
 		Image resizedAddFileIconImage = addFileIconImage.getScaledInstance(25, 25,  java.awt.Image.SCALE_SMOOTH);
 		addFileIcon = new ImageIcon(resizedAddFileIconImage);
 		myAddFileBtn.setIcon(addFileIcon);
+		
+		
+		ImageIcon removeFolderIcon = new ImageIcon(Toolkit.getDefaultToolkit().
+				getImage(App.class.getResource("/ic_RemoveFolder.png")));
+		// Resizing the icon
+		Image removeFolderIconImage = removeFolderIcon.getImage();
+		Image resizedRemoveFolderIconImage = removeFolderIconImage.getScaledInstance(25, 25,  java.awt.Image.SCALE_SMOOTH);
+		removeFolderIcon = new ImageIcon(resizedRemoveFolderIconImage);
+		myRemoveFolderBtn.setIcon(removeFolderIcon);
+		
+		
+		ImageIcon removeFileIcon = new ImageIcon(Toolkit.getDefaultToolkit().
+				getImage(App.class.getResource("/ic_RemoveFile.png")));
+		// Resizing the icon
+		Image removeFileIconImage = removeFileIcon.getImage();
+		Image resizedRemoveFileIconImage = removeFileIconImage.getScaledInstance(25, 25,  java.awt.Image.SCALE_SMOOTH);
+		removeFileIcon = new ImageIcon(resizedRemoveFileIconImage);
+		myRemoveFileBtn.setIcon(removeFileIcon);
 		
 		
 		ImageIcon backIcon = new ImageIcon(Toolkit.getDefaultToolkit().
@@ -73,6 +95,8 @@ public class ToolBar extends JToolBar {
 		add(myBackBtn);
 		add(myAddFolderBtn);
 		add(myAddFileBtn);
+		add(myRemoveFolderBtn);
+		add(myRemoveFileBtn);
 	}
 
 	public void setToolBarListener(ToolBarListener theListener) {
@@ -107,6 +131,36 @@ public class ToolBar extends JToolBar {
 					FileClass file = new FileClass(selectedfile);
 					if (myToolBarListener != null) {
 						myToolBarListener.addFileEventOccurred(file);
+					}
+				}
+			}
+		});
+		
+		myRemoveFolderBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+//				String name = (String)JOptionPane.showInputDialog(
+//						myFrame, "", "Delete Folder",
+//						JOptionPane.PLAIN_MESSAGE, null, null, "Folder to delete");
+//				if ((name != null) && (name.length() > 0)) {
+//					Folder folder = new Folder(name);
+					if (myToolBarListener != null) {
+						myToolBarListener.removeFolderEventOccurred(folder);
+					}
+				}
+			}
+		});
+
+		myRemoveFileBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+//				JFileChooser fileChooser = new JFileChooser();
+//				File selectedfile = null;
+//				if (fileChooser.showOpenDialog(myFrame) == JFileChooser.APPROVE_OPTION) {
+//					selectedfile = fileChooser.getSelectedFile();
+//				}
+//				if(selectedfile != null) {
+//					FileClass file = new FileClass(selectedfile);
+					if (myToolBarListener != null) {
+						myToolBarListener.removeFileEventOccurred(file);
 					}
 				}
 			}

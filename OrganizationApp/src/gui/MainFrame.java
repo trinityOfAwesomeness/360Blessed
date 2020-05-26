@@ -72,6 +72,20 @@ public class MainFrame extends JFrame {
 				myContentPanel.update();
 				mySidePanel.update();
 			}
+			
+			@Override
+			public void removeFolderEventOccurred(Folder folder) {
+				myController.removeFolder(folder);
+				myContentPanel.update();
+				mySidePanel.update();
+			}
+
+			@Override
+			public void removeFileEventOccurred(FileClass file) {
+				myController.removeFile(file);
+				myContentPanel.update();
+				mySidePanel.update();
+			}
 
 			@Override
 			public void goBackEventOccurred() {
