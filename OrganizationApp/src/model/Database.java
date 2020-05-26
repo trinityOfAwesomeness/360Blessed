@@ -5,8 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,35 +15,75 @@ import java.util.List;
  */
 public class Database {
 
-	private List<Data> myDataList;
+	private Folder myCurrentFolder;
+	private List<Folder> myPreviousFolders;
+	
 	private ProjectVersion myProjectVersion;
 	private Settings mySettings;
 
 	public Database() {
-		myDataList = new LinkedList<Data>();
+		myCurrentFolder = new Folder("");
+		myPreviousFolders = new ArrayList<Folder>();
 		myProjectVersion = new ProjectVersion();
 		mySettings = new Settings();
 	}
 
-
-	public void addFolder(Folder folder) {
-		myDataList.add(folder);
-		System.out.println(myDataList);
+	
+	
+	
+	public void addFolder(Folder theFolder) {
+		myCurrentFolder.addFolder(theFolder);
+		
+		System.out.println(myCurrentFolder.getDataList());
 	}
 
-	public void addFile(FileClass file) {
-		myDataList.add(file);
-		System.out.println(myDataList);
+	public void addFile(FileClass theFile) {
+		myCurrentFolder.addFile(theFile);
+		
+		System.out.println(myCurrentFolder.getDataList());
 	}
 
 	public void removeData (int index) {
-		myDataList.remove(index);
+	//	myDataList.remove(index);
 	}
 
-	public List<Data> getData(){
-		return Collections.unmodifiableList(myDataList);
+	
+	
+	
+	
+	/**
+	 * Get current folder.
+	 * @return the current folder
+	 */
+	public Folder getCurrentFolder() {
+		return myCurrentFolder;
 	}
 
+	/**
+	 * Set current folder
+	 * @param theFolder - the folder to be set
+	 */
+	public void setCurrentFolder(Folder theFolder) {
+		myPreviousFolders.add(myCurrentFolder);
+		myCurrentFolder = theFolder;
+		System.out.println(myPreviousFolders);
+	}
+	
+	public void goToPreviousFolder() throws IndexOutOfBoundsException {
+		try {
+			int previousFolderLocation = myPreviousFolders.size()-1;
+			myCurrentFolder = myPreviousFolders.get(previousFolderLocation);
+			myPreviousFolders.remove(previousFolderLocation);
+		} catch (IndexOutOfBoundsException e){
+			throw new IndexOutOfBoundsException();
+		}
+	}
+	
+	public void goToHomeFolder() {
+		myCurrentFolder = myPreviousFolders.get(0);
+		myPreviousFolders.removeAll(myPreviousFolders);
+	}
+	
 	public double getProjectVersion() {
 		return myProjectVersion.getVersion();
 	}
@@ -62,6 +101,7 @@ public class Database {
 			String userEmail = parts[1];
 			mySettings.setUserName(userName);
 			mySettings.setUserEmail(userEmail);
+			reader.close();
 		} catch (ArrayIndexOutOfBoundsException e) {
 			throw new IOException();
 		}
@@ -73,7 +113,7 @@ public class Database {
             writer.write(mySettings.getUserName() + " " + mySettings.getUserEmail());
             writer.close();
         } catch (IOException ex) {
-            ex.printStackTrace();
+        	throw new IOException();
         }
 	}
 }

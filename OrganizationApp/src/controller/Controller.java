@@ -2,9 +2,6 @@ package controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
-
-import model.Data;
 import model.Database;
 import model.FileClass;
 import model.Folder;
@@ -18,16 +15,6 @@ import model.Settings;
 public class Controller {
 	
 	Database myDataBase = new Database();
-	
-	/**
-	 * Get list of data (folder or file) from the model,
-	 * and ideally send it to the view.
-	 * 
-	 * @return list of data from the model
-	 */
-	public List<Data> getDataList() {
-		return myDataBase.getData();
-	}
 	
 	/**
 	 * Add a new folder to the data list.
@@ -56,9 +43,26 @@ public class Controller {
 		myDataBase.removeData(index);
 	}
 	
+	public Folder getCurrentFolder() {
+		return myDataBase.getCurrentFolder();
+	}
+	
+	public void setCurrentFolder(Folder theFolder) {
+		myDataBase.setCurrentFolder(theFolder);
+	}
+	
+	public void goToPreviousFolder() throws IndexOutOfBoundsException {
+		myDataBase.goToPreviousFolder();
+	}
+	
+	public void goToHomeFolder() {
+		myDataBase.goToHomeFolder();
+	}
+	
 	public Settings getSettings() {
 		return myDataBase.getSettings();
 	}
+	
 	public double getProjectVersion() {
 		return myDataBase.getProjectVersion();
 	}
