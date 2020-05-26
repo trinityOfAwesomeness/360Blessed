@@ -15,7 +15,7 @@ import model.Settings;
 public class Controller {
 	
 	Database myDataBase = new Database();
-	Settings mySettings = new Settings(null, null);
+	Settings mySettings = new Settings();
 	
 	/**
 	 * Add a new folder to the data list.
