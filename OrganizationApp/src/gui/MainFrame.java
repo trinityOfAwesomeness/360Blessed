@@ -26,6 +26,7 @@ public class MainFrame extends JFrame {
 	private Controller myController;
 	private ContentPanel myContentPanel;
 	private SidePanel mySidePanel;
+
 	private TopPanel myTopPanel;
 
 	/**
@@ -34,7 +35,6 @@ public class MainFrame extends JFrame {
 	 * @param the version the program version
 	 */
 	public MainFrame() {
-
 		myController = new Controller();
 		myContentPanel = new ContentPanel();
 		mySidePanel = new SidePanel();
@@ -69,20 +69,6 @@ public class MainFrame extends JFrame {
 			@Override
 			public void addFileEventOccurred(FileClass file) {
 				myController.addFile(file);
-				myContentPanel.update();
-				mySidePanel.update();
-			}
-			
-			@Override
-			public void removeFolderEventOccurred(Folder folder) {
-				myController.removeFolder(folder);
-				myContentPanel.update();
-				mySidePanel.update();
-			}
-
-			@Override
-			public void removeFileEventOccurred(FileClass file) {
-				myController.removeFile(file);
 				myContentPanel.update();
 				mySidePanel.update();
 			}
@@ -190,6 +176,12 @@ public class MainFrame extends JFrame {
 		});
 
 		aboutMenu.add(aboutProgram);
+		fileMenu.add(add);
+		fileMenu.add(remove);
+		settingsMenu.add(setSettings);
+		settingsMenu.add(getSettings);
+		menuBar.add(fileMenu);
+		menuBar.add(settingsMenu);
 		settingsMenu.add(importSettings);
 		settingsMenu.add(exportSettings);
 		menuBar.add(aboutMenu);

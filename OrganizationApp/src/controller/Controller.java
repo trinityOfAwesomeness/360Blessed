@@ -15,6 +15,7 @@ import model.Settings;
 public class Controller {
 	
 	Database myDataBase = new Database();
+	Settings mySettings = new Settings(null, null);
 	
 	/**
 	 * Add a new folder to the data list.
@@ -32,24 +33,6 @@ public class Controller {
 	 */
 	public void addFile(FileClass file) {
 		myDataBase.addFile(file);
-	}
-	
-	/**
-	 * Removes chosen folder from the data list.
-	 * 
-	 * @param folder - folder to be removed
-	 */
-	public void removeFolder(Folder folder) {
-		myDataBase.removeFolder(folder);
-	}
-	
-	/**
-	 * Removes chosen file from the data list.
-	 * 
-	 * @param file - file to be removed
-	 */
-	public void removeFile(FileClass file) {
-		myDataBase.removeFile(file);
 	}
 	
 	/**
@@ -84,7 +67,6 @@ public class Controller {
 	public double getProjectVersion() {
 		return myDataBase.getProjectVersion();
 	}
-	
 
 	public void loadSettingsFromFile(File file) throws IOException {
 		myDataBase.loadSettingsFromFile(file);
