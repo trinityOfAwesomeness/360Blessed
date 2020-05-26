@@ -13,4 +13,8 @@ import model.Folder;
 public interface ToolBarListener extends EventListener {
 	public void addFolderEventOccurred(Folder theFolder);
 	public void addFileEventOccurred(FileClass theFile);
+	public void removeFolderEventOccurred(Folder theFolder);
+	public void removeFileEventOccurred(FileClass theFile);
+	public void goBackEventOccurred();
+	public void goHomeEventOccurred();
 }

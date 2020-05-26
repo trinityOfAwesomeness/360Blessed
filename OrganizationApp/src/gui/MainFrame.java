@@ -1,4 +1,5 @@
 package gui;
+
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -40,8 +41,20 @@ public class MainFrame extends JFrame {
 		myTopPanel = new TopPanel(this);
 		setLayout(new BorderLayout());
 
-		myContentPanel.setData(myController.getDataList());
-		mySidePanel.setData(myController.getDataList());
+		myContentPanel.setCurrentFolder(myController.getCurrentFolder());
+		mySidePanel.setCurrentFolder(myController.getCurrentFolder());
+
+
+		myContentPanel.setFolderClickedListener(new FolderClickedListener() {
+			@Override
+			public void folderClickedEventOccurred(Folder folder) {
+				myController.setCurrentFolder(folder);
+				myContentPanel.setCurrentFolder(myController.getCurrentFolder());
+				mySidePanel.setCurrentFolder(myController.getCurrentFolder());
+				myContentPanel.update();
+				mySidePanel.update();
+			}
+		});
 
 		// Since MainFrame is the only view class that can interact with the controller,
 		// it adds functionality here for tool bar.
@@ -56,6 +69,43 @@ public class MainFrame extends JFrame {
 			@Override
 			public void addFileEventOccurred(FileClass file) {
 				myController.addFile(file);
+				myContentPanel.update();
+				mySidePanel.update();
+			}
+			
+			@Override
+			public void removeFolderEventOccurred(Folder folder) {
+				myController.removeFolder(folder);
+				myContentPanel.update();
+				mySidePanel.update();
+			}
+
+			@Override
+			public void removeFileEventOccurred(FileClass file) {
+				myController.removeFile(file);
+				myContentPanel.update();
+				mySidePanel.update();
+			}
+
+			@Override
+			public void goBackEventOccurred() {
+				try {
+					myController.goToPreviousFolder();
+					myContentPanel.setCurrentFolder(myController.getCurrentFolder());
+					mySidePanel.setCurrentFolder(myController.getCurrentFolder());
+					myContentPanel.update();
+					mySidePanel.update();
+				} catch (IndexOutOfBoundsException e) {
+					JOptionPane.showMessageDialog(MainFrame.this, "Can't go back anymore!", "Error",
+							JOptionPane.ERROR_MESSAGE);
+				}
+			}
+
+			@Override
+			public void goHomeEventOccurred() {
+				myController.goToHomeFolder();
+				myContentPanel.setCurrentFolder(myController.getCurrentFolder());
+				mySidePanel.setCurrentFolder(myController.getCurrentFolder());
 				myContentPanel.update();
 				mySidePanel.update();
 			}
@@ -152,5 +202,4 @@ public class MainFrame extends JFrame {
 		menuBar.add(settingsMenu);
 		return menuBar;
 	}
-
 }

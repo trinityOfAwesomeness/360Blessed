@@ -1,5 +1,7 @@
 package model;
 
+import java.io.File;
+
 /**
  * File class.
  * 
@@ -7,14 +9,21 @@ package model;
  */
 public class FileClass implements Data {
 	
+	File myFile;
 	String myName;
 	String myDateCreated;
 	String myType;
 	
-	public FileClass(String fileName) {
-		this.myName = fileName;
+	public FileClass(File theFile) {
+		myFile = theFile;
+		myName = theFile.getName();
+	    myType = myName.substring(myName.lastIndexOf("."));
 	}
 
+	public File getFile() {
+		return myFile;
+	}
+	
 	public String getName() {
 		return myName;
 	}
@@ -27,8 +36,8 @@ public class FileClass implements Data {
 		return myType;
 	}
 	
-	public void setName(String folderName) {
-		this.myName = folderName;
+	public void setName(String theFileName) {
+		myName = theFileName;
 	}
 	
 	public String toString() {

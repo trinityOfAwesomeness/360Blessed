@@ -3,16 +3,11 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTree;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
-
-import model.Data;
+import model.Folder;
 
 /**
  * Class to Side Panel for GUI.
@@ -21,7 +16,7 @@ import model.Data;
  */
 public class SidePanel extends JPanel {
 
-	private List<Data> myDataList;
+	private Folder myCurrentFolder;
 	private JTree myTree;
 	
 	/**
@@ -41,8 +36,8 @@ public class SidePanel extends JPanel {
 //        add(new JScrollPane(myTree), BorderLayout.CENTER);
 	}
 	
-	public void setData(List<Data> theDataList) {
-		this.myDataList = theDataList;
+	public void setCurrentFolder(Folder theFolder) {
+		theFolder = myCurrentFolder;
 	}
 	
 	public void update() {

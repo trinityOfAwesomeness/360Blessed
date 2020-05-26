@@ -1,5 +1,6 @@
 package model;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -9,13 +10,14 @@ import java.util.List;
  */
 public class Folder implements Data {
 	
-	String myName;
-	String myDateCreated;
-	String myType;
-	List<Data> myDataList;	// folder can contain file or another folder
+	private String myName;
+	private String myDateCreated;
+	private String myType;
+	private List<Data> myDataList;	// folder can contain file or another folder
 	
 	public Folder(String folderName) {
 		this.myName = folderName;
+		myDataList = new LinkedList<Data>();
 	}
 
 	public String getName() {
@@ -34,12 +36,26 @@ public class Folder implements Data {
 		this.myName = folderName;
 	}
 	
-	public List<Data> getData() {
+	public List<Data> getDataList() {
 		return myDataList;
 	}
 	
+	public void addFolder(Folder theFolder) {
+		myDataList.add(theFolder);
+	}
+	
+	public void addFile(FileClass theFile) {
+		myDataList.add(theFile);
+	}
+	
+	public void removeFolder(Folder theFolder) {
+		myDataList.remove(theFolder);
+	}
+	
+	public void removeFile(FileClass theFile) {
+		myDataList.remove(theFile);
+	}
 	public String toString() {
 		return myName;
-		
 	}
 }

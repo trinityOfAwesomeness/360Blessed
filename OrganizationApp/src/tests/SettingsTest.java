@@ -4,63 +4,54 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import model.ProjectVersion;
+
 import model.Settings;
 
 /**
- * Tests for Settings class
+ * This class tests the functionality for our Settings Class.
  * @author Tatiana Linardopoulou
+ * @version Spring 2020
  *
  */
 public class SettingsTest {
+
+	private Settings mySettings;
 	
-	/** Settings object to test.*/
-	private Settings mySettingsTest;
-	
-	/** The name. */
-	private String myName = "Darth Vader";
-	
-	/** The email. */
-	private String myEmail = "darthvader@starwars.com";
-
 	@Test
-	public void testSettings() {
-		mySettingsTest = new Settings(myName, myEmail);
-		assertNotNull(mySettingsTest);
-		assertEquals(myName, mySettingsTest.getName());
-		assertEquals(myEmail, mySettingsTest.getEmail());
+	public void testGetUserName() {
+		mySettings = new Settings();
+		mySettings.setUserName("Darth Vader");
+		assertEquals("Darth Vader", mySettings.getUserName());
+		
 	}
 
 	@Test
-	public void testSetName() {
-		mySettingsTest = new Settings(null, null);
-		mySettingsTest.setName("Jean-Luc Picard");
-		mySettingsTest.setEmail("picard@starfleet.com");
-		assertEquals("Jean-Luc Picard", mySettingsTest.getName());
+	public void testSetUserName() {
+		mySettings = new Settings();
+		mySettings.setUserName("Jean-Luc Picard");
+		assertEquals("Jean-Luc Picard", mySettings.getUserName());
 	}
 
 	@Test
-	public void testSetEmail() {
-		mySettingsTest = new Settings(null, null);
-		mySettingsTest.setName("Jean-Luc Picard");
-		mySettingsTest.setEmail("picard@starfleet.com");
-		assertEquals("picard@starfleet.com", mySettingsTest.getEmail());
+	public void testGetUserEmail() {
+		mySettings = new Settings();
+		mySettings.setUserEmail("DarthVader@starwars.com");
+		assertEquals("DarthVader@starwars.com", mySettings.getUserEmail());
 	}
 
 	@Test
-	public void testGetName() {
-		mySettingsTest = new Settings(null, null);
-		mySettingsTest.setName("Data");
-		mySettingsTest.setEmail("data@starfleet.com");
-		assertEquals("Data", mySettingsTest.getName());
+	public void testSetUserEmail() {
+		mySettings = new Settings();
+		mySettings.setUserEmail("picard@starfleet.com");
+		assertEquals("picard@starfleet.com", mySettings.getUserEmail());
 	}
 
 	@Test
-	public void testGetEmail() {
-		mySettingsTest = new Settings(null, null);
-		mySettingsTest.setName("Data");
-		mySettingsTest.setEmail("data@starfleet.com");
-		assertEquals("data@starfleet.com", mySettingsTest.getEmail());
+	public void testToString() {
+		mySettings = new Settings();
+		mySettings.setUserName("Jean-Luc Picard");
+		mySettings.setUserEmail("picard@starfleet.com");
+		assertEquals("Jean-Luc Picard picard@starfleet.com", mySettings.toString());
 	}
 
 }
