@@ -42,6 +42,18 @@ public class Database {
 		
 		System.out.println(myCurrentFolder.getDataList());
 	}
+	
+	public void removeFolder(Folder theFolder) {
+		myCurrentFolder.removeFolder(theFolder);
+		
+		System.out.println(myCurrentFolder.getDataList());
+	}
+
+	public void removeFile(FileClass theFile) {
+		myCurrentFolder.removeFile(theFile);
+		
+		System.out.println(myCurrentFolder.getDataList());
+	}
 
 	public void removeData (int index) {
 	//	myDataList.remove(index);
