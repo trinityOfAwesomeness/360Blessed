@@ -176,11 +176,6 @@ public class MainFrame extends JFrame {
 		});
 
 		aboutMenu.add(aboutProgram);
-		fileMenu.add(add);
-		fileMenu.add(remove);
-		settingsMenu.add(setSettings);
-		settingsMenu.add(getSettings);
-		menuBar.add(fileMenu);
 		menuBar.add(settingsMenu);
 		settingsMenu.add(importSettings);
 		settingsMenu.add(exportSettings);
