@@ -10,7 +10,6 @@ import model.Settings;
 /**
  * This class tests the functionality for our Settings Class.
  * @author Tatiana Linardopoulou
- * @version Spring 2020
  *
  */
 public class SettingsTest {

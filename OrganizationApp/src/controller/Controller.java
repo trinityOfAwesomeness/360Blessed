@@ -26,6 +26,7 @@ public class Controller {
 		myDataBase.addFolder(folder);
 	}
 	
+	
 	/**
 	 * Add a new file to the data list.
 	 * 
