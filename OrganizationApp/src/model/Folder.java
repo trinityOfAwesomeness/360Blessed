@@ -44,8 +44,20 @@ public class Folder implements Data {
 		myDataList.add(theFolder);
 	}
 	
+	public void removeFolder(Folder theFolder) {
+		for(int i = 0; i < myDataList.size(); ++i) {
+			if (theFolder.getName() == myDataList.get(i).getName()) {
+				myDataList.remove(myDataList.get(i));
+			}
+		}
+	}
+	
 	public void addFile(FileClass theFile) {
 		myDataList.add(theFile);
+	}
+	
+	public void removeFile(FileClass theFile) {
+		myDataList.remove(theFile);
 	}
 	
 	public String toString() {

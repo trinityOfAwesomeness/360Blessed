@@ -33,8 +33,10 @@ import model.Folder;
 public class ContentPanel extends JPanel implements ActionListener {
 
 	private Folder myCurrentFolder;
+	private FileClass myCurrentFile;
 	private JPanel myContentPanel;
 	private JPopupMenu myPopupMenu;
+	private String mySelectedPopupMenuTargetName;
 	private JMenuItem myMenuItem;
 	private FolderClickedListener myFolderClickedListener;
 	private JLabel myFolderLabel;
@@ -63,6 +65,9 @@ public class ContentPanel extends JPanel implements ActionListener {
 		myCurrentFolder = theCurrentFolder;
 	}
 	
+	public void setCurrentFile(FileClass theCurrentFile) {
+		myCurrentFile = theCurrentFile;
+	}	
 
 	/**
 	 * Updates the contentPanel with elements in myDataList.
@@ -85,7 +90,7 @@ public class ContentPanel extends JPanel implements ActionListener {
 				myFolderLabel.setBorder(BorderFactory.createEtchedBorder());
 				
 				//right click pop-up menu
-				MouseListener popupListener = new PopupListener();
+				MouseListener popupListener = new PopupListener(data.getName());
 				myFolderLabel.addMouseListener(popupListener);
 				
 				// show files in clicked folder
@@ -113,7 +118,7 @@ public class ContentPanel extends JPanel implements ActionListener {
 				myFileLabel.setBorder(BorderFactory.createEtchedBorder());
 				
 				//right click pop-up menu
-				MouseListener popupListener = new PopupListener();
+				MouseListener popupListener = new PopupListener(data.getName());
 				myFileLabel.addMouseListener(popupListener);
 				
 				// open file
@@ -145,7 +150,10 @@ public class ContentPanel extends JPanel implements ActionListener {
  *
  */
 class PopupListener extends MouseAdapter {
+	private String name;
+	
     public void mousePressed(MouseEvent e) {
+    	mySelectedPopupMenuTargetName = this.name;
         maybeShowPopup(e);
     }
 
@@ -158,6 +166,10 @@ class PopupListener extends MouseAdapter {
         	myPopupMenu.show(e.getComponent(),
                        e.getX(), e.getY());
         }
+    }
+    
+    public PopupListener( String name) {
+    	this.name = name;
     }
 }
 
@@ -174,15 +186,18 @@ public void actionPerformed(ActionEvent e) {
 			JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 	if (result == JOptionPane.YES_OPTION) {
 		for (Data data:myCurrentFolder.getDataList()) {
-			if (data instanceof Folder) {
-				myContentPanel.remove(myFolderLabel);
-				revalidate();
-				repaint();
-			} else if (data instanceof FileClass) {
-				myContentPanel.remove(myFileLabel);
-				revalidate();
-				repaint();
+			String name = data.getName();
+			if( mySelectedPopupMenuTargetName == name) {
+				if (data instanceof FileClass)				{
+					myCurrentFolder.removeFile((FileClass)data);
+				}
+				else {
+					myCurrentFolder.removeFolder((Folder)data);
+				}
 			}
+			update();
+			revalidate();
+			repaint();
 		}
 	}
 

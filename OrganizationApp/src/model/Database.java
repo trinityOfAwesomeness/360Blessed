@@ -28,11 +28,14 @@ public class Database {
 		mySettings = new Settings();
 	}
 
-	
-	
-	
 	public void addFolder(Folder theFolder) {
 		myCurrentFolder.addFolder(theFolder);
+		
+		System.out.println(myCurrentFolder.getDataList());
+	}
+	
+	public void removeFolder(Folder theFolder) {
+		myCurrentFolder.removeFolder(theFolder);
 		
 		System.out.println(myCurrentFolder.getDataList());
 	}
@@ -43,13 +46,11 @@ public class Database {
 		System.out.println(myCurrentFolder.getDataList());
 	}
 	
-	public void removeData (int index) {
-	//	myDataList.remove(index);
+	public void removeFile(FileClass theFile) {
+		myCurrentFolder.removeFile(theFile);
+		
+		System.out.println(myCurrentFolder.getDataList());
 	}
-
-	
-	
-	
 	
 	/**
 	 * Get current folder.
