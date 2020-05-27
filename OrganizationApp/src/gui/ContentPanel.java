@@ -5,13 +5,20 @@ import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import application.App;
 import model.Data;
@@ -21,12 +28,19 @@ import model.Folder;
 /**
  * Class to build Content Panel with folders for GUI.
  * @author Seoungdeok Jeon
+ * @author Tatiana Linardopoulou
  */
-public class ContentPanel extends JPanel {
+public class ContentPanel extends JPanel implements ActionListener {
 
 	private Folder myCurrentFolder;
 	private JPanel myContentPanel;
+	private JPopupMenu myPopupMenu;
+	private JMenuItem myMenuItem;
 	private FolderClickedListener myFolderClickedListener;
+	private JLabel myFolderLabel;
+	private JLabel myFileLabel;
+	
+	
 	/**
 	 * Constructor for ContentPanel object.
 	 * Builds content Panel with folders.
@@ -39,11 +53,16 @@ public class ContentPanel extends JPanel {
 		add(colName, BorderLayout.NORTH);
 		add(new JScrollPane(myContentPanel), BorderLayout.CENTER);
 		setBorder(BorderFactory.createLineBorder(Color.black));
+		myPopupMenu = new JPopupMenu();
+		myMenuItem = new JMenuItem("Delete");
+		myMenuItem.addActionListener(this);
+	    myPopupMenu.add(myMenuItem);
 	}
 
 	public void setCurrentFolder(Folder theCurrentFolder) {
 		myCurrentFolder = theCurrentFolder;
 	}
+	
 
 	/**
 	 * Updates the contentPanel with elements in myDataList.
@@ -61,12 +80,16 @@ public class ContentPanel extends JPanel {
 				Image newimg = image.getScaledInstance(25, 25,  java.awt.Image.SCALE_SMOOTH);
 				folderIcon = new ImageIcon(newimg);
 
-				JLabel folderLabel = new JLabel(data.getName());
-				folderLabel.setIcon(folderIcon);
-				folderLabel.setBorder(BorderFactory.createEtchedBorder());
+				myFolderLabel = new JLabel(data.getName());
+				myFolderLabel.setIcon(folderIcon);
+				myFolderLabel.setBorder(BorderFactory.createEtchedBorder());
+				
+				//right click pop-up menu
+				MouseListener popupListener = new PopupListener();
+				myFolderLabel.addMouseListener(popupListener);
 				
 				// show files in clicked folder
-				folderLabel.addMouseListener(new MouseAdapter() {
+				myFolderLabel.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
 						Folder clickedFolder = ((Folder) data);
@@ -75,7 +98,7 @@ public class ContentPanel extends JPanel {
 						}
 					}
 				});
-				myContentPanel.add(folderLabel);
+				myContentPanel.add(myFolderLabel);
 			} else if (data instanceof FileClass) {
 				ImageIcon fileIcon = new ImageIcon(Toolkit.getDefaultToolkit().
 						getImage(App.class.getResource("/ic_file.png")));
@@ -85,11 +108,16 @@ public class ContentPanel extends JPanel {
 				Image newimg = image.getScaledInstance(25, 25,  java.awt.Image.SCALE_SMOOTH);
 				fileIcon = new ImageIcon(newimg);
 
-				JLabel fileLabel = new JLabel(data.getName());
-				fileLabel.setIcon(fileIcon);
-				fileLabel.setBorder(BorderFactory.createEtchedBorder());
+				myFileLabel = new JLabel(data.getName());
+				myFileLabel.setIcon(fileIcon);
+				myFileLabel.setBorder(BorderFactory.createEtchedBorder());
+				
+				//right click pop-up menu
+				MouseListener popupListener = new PopupListener();
+				myFileLabel.addMouseListener(popupListener);
+				
 				// open file
-				fileLabel.addMouseListener(new MouseAdapter() {
+				myFileLabel.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
 						try {
@@ -100,7 +128,7 @@ public class ContentPanel extends JPanel {
 						}
 					}
 				});
-				myContentPanel.add(fileLabel);
+				myContentPanel.add(myFileLabel);
 			}
 		}
 		validate();
@@ -110,4 +138,53 @@ public class ContentPanel extends JPanel {
 	public void setFolderClickedListener(FolderClickedListener theListener) {
 		myFolderClickedListener = theListener;
 	}
+
+/**
+ * Class for right click pop-up menu with delete option.
+ * @author Tatiana Linardopoulou
+ *
+ */
+class PopupListener extends MouseAdapter {
+    public void mousePressed(MouseEvent e) {
+        maybeShowPopup(e);
+    }
+
+    public void mouseReleased(MouseEvent e) {
+        maybeShowPopup(e);
+    }
+
+    private void maybeShowPopup(MouseEvent e) {
+        if (e.isPopupTrigger()) {
+        	myPopupMenu.show(e.getComponent(),
+                       e.getX(), e.getY());
+        }
+    }
+}
+
+/**
+ * Displays confirm delete window and deletes folder/file if user selects "yes".
+ * Displays updated data in content panel.
+ * 
+ * @param e the Action Event
+ */
+@Override
+public void actionPerformed(ActionEvent e) {
+	int result = JOptionPane.showConfirmDialog(myMenuItem, "Are you sure you want to delete this item?"
+			+ "\nIf you delete a Folder, all of the Files within it will also be deleted!", "WARNING!",
+			JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+	if (result == JOptionPane.YES_OPTION) {
+		for (Data data:myCurrentFolder.getDataList()) {
+			if (data instanceof Folder) {
+				myContentPanel.remove(myFolderLabel);
+				revalidate();
+				repaint();
+			} else if (data instanceof FileClass) {
+				myContentPanel.remove(myFileLabel);
+				revalidate();
+				repaint();
+			}
+		}
+	}
+
+}
 }

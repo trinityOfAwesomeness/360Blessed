@@ -42,7 +42,7 @@ public class Database {
 		
 		System.out.println(myCurrentFolder.getDataList());
 	}
-
+	
 	public void removeData (int index) {
 	//	myDataList.remove(index);
 	}
