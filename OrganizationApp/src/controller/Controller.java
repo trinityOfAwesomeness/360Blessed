@@ -26,6 +26,14 @@ public class Controller {
 		myDataBase.addFolder(folder);
 	}
 	
+	/**
+	 * Remove folder from the data list.
+	 * 
+	 * @param folder - folder to be removed
+	 */
+	public void removeFolder(Folder folder) {
+		myDataBase.removeFolder(folder);
+	}	
 	
 	/**
 	 * Add a new file to the data list.
@@ -37,13 +45,19 @@ public class Controller {
 	}
 	
 	/**
+	 * Remove file from the data list.
+	 * 
+	 * @param file - file to be removed
+	 */
+	public void removeFile(FileClass file) {
+		myDataBase.removeFile(file);
+	}
+	
+	/**
 	 * Remove a data, which is at the given index.
 	 * 
 	 * @param index - the index of a data to be removed
 	 */
-	public void removeData(int index) {
-		myDataBase.removeData(index);
-	}
 	
 	public Folder getCurrentFolder() {
 		return myDataBase.getCurrentFolder();
