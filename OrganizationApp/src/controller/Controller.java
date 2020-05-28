@@ -71,7 +71,7 @@ public class Controller {
 		myDataBase.goToPreviousFolder();
 	}
 	
-	public void goToHomeFolder() {
+	public void goToHomeFolder() throws IndexOutOfBoundsException {
 		myDataBase.goToHomeFolder();
 	}
 	

@@ -89,11 +89,16 @@ public class MainFrame extends JFrame {
 
 			@Override
 			public void goHomeEventOccurred() {
-				myController.goToHomeFolder();
-				myContentPanel.setCurrentFolder(myController.getCurrentFolder());
-				mySidePanel.setCurrentFolder(myController.getCurrentFolder());
-				myContentPanel.update();
-				mySidePanel.update();
+				try {
+					myController.goToHomeFolder();
+					myContentPanel.setCurrentFolder(myController.getCurrentFolder());
+					mySidePanel.setCurrentFolder(myController.getCurrentFolder());
+					myContentPanel.update();
+					mySidePanel.update();
+				} catch (IndexOutOfBoundsException e) {
+					JOptionPane.showMessageDialog(MainFrame.this, "You are seeing the main page!", "Error",
+							JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 		myTopPanel.setSettingsListener(new SettingsListener() {
