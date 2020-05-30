@@ -145,7 +145,6 @@ public class Database {
 					if (x instanceof model.FileClass) {
 						if (x.toString().equals(theFile.toString())) {
 							targetFile = ((FileClass) x).getFile();
-							System.out.println("FOUND  " + targetFile);
 						} 
 					} else if (x instanceof model.Folder) {
 						
@@ -155,7 +154,6 @@ public class Database {
 				}
 			}
 		}
-		System.out.println("RETURNED  "  + targetFile);
 		return targetFile;
 	}
 }
