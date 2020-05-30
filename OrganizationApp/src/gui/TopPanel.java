@@ -18,45 +18,51 @@ import javax.swing.JTextField;
  *
  */
 public class TopPanel extends JPanel{
+	/** Serial version to quiet eclipse. */
+	private static final long serialVersionUID = 1L;
 	private ToolBar myToolBar;
 	private JPanel mySettingField;
 	private JTextField nameField;
 	private JTextField emailField;
 	private JTextField searchField;
-	private SettingsListener mySettingsListener;
+	private TopBarListener myTopBarListener;
 
 	public TopPanel(JFrame theFrame) {
 		myToolBar = new ToolBar(theFrame);
 		mySettingField = new JPanel();
 		nameField = new JTextField(15);
 		emailField = new JTextField(15);
-		//TODO Added search field
 		searchField = new JTextField(15);
 		nameField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (mySettingsListener != null) {
+				if (myTopBarListener != null) {
 					String name = nameField.getText();
-					mySettingsListener.editNameEventOccurred(name);
+					myTopBarListener.editNameEventOccurred(name);
 				}
 
 			}
 		});
 		emailField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (mySettingsListener != null) {
+				if (myTopBarListener != null) {
 					String email = nameField.getText();
-					mySettingsListener.editEmailEventOccurred(email);
+					myTopBarListener.editEmailEventOccurred(email);
 				}
 
 			}
 		});
 		//Used an AbstractAction to grab text field when 'enter key' detected
 		Action action = new AbstractAction() {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String file = searchField.getText();
 				System.out.println(file);
-				mySettingsListener.editSearchEventOccurred(file);
+				myTopBarListener.editSearchEventOccurred(file);
 			}
 		
 		};
@@ -83,8 +89,8 @@ public class TopPanel extends JPanel{
 		
 	}
 
-	public void setSettingsListener(SettingsListener theListener) {
-		mySettingsListener = theListener;
+	public void setTopBarListener(TopBarListener theListener) {
+		myTopBarListener = theListener;
 	}
 	
 	public void update(String name, String email) {
