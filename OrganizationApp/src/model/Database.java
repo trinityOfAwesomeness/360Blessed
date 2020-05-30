@@ -139,12 +139,17 @@ public class Database {
 	 */
 	private File searchHelp(Data theData, String theFile) {
 		File targetFile = null;
+		
 		if (Objects.nonNull(theData)) {
 			if (theData instanceof model.Folder) {
 				for (Data x : ((Folder) theData).getDataList()) {
 					if (x instanceof model.FileClass) {
+						System.out.println("HERE -> " + ((FileClass)x).toString());
 						if (x.toString().equals(theFile.toString())) {
+							System.out.println("MATCH");
 							targetFile = ((FileClass) x).getFile();
+							//
+							return targetFile;
 						} 
 					} else if (x instanceof model.Folder) {
 						
