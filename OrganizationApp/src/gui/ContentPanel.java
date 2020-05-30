@@ -32,6 +32,8 @@ import model.Folder;
  */
 public class ContentPanel extends JPanel implements ActionListener {
 
+	/** Serial version to quiet eclipse. */
+	private static final long serialVersionUID = 1L;
 	private Folder myCurrentFolder;
 	private JPanel myContentPanel;
 	private JPopupMenu myPopupMenu;

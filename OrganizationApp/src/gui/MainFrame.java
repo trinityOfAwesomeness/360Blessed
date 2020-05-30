@@ -26,6 +26,8 @@ import model.Folder;
  */
 public class MainFrame extends JFrame {
 
+	/** Automatic serial version to quiet eclipse. */
+	private static final long serialVersionUID = 1L;
 	private Controller myController;
 	private ContentPanel myContentPanel;
 	private SidePanel mySidePanel;
@@ -105,7 +107,7 @@ public class MainFrame extends JFrame {
 				}
 			}
 		});
-		myTopPanel.setSettingsListener(new SettingsListener() {
+		myTopPanel.setTopBarListener(new TopBarListener() {
 			@Override
 			public void editNameEventOccurred(String name) {
 				myController.getSettings().setUserName(name);
