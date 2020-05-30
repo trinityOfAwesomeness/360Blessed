@@ -148,7 +148,6 @@ public class Database {
 						if (x.toString().equals(theFile.toString())) {
 							System.out.println("MATCH");
 							targetFile = ((FileClass) x).getFile();
-							//
 							return targetFile;
 						} 
 					} else if (x instanceof model.Folder) {
