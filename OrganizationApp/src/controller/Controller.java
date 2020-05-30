@@ -11,6 +11,7 @@ import model.Settings;
  * Class to connect View with Model.
  * 
  * @author Seoungdeok Jeon
+ * @author Adam Hall
  */
 public class Controller {
 	
@@ -61,6 +62,16 @@ public class Controller {
 	
 	public Folder getCurrentFolder() {
 		return myDataBase.getCurrentFolder();
+	}
+	
+	/**
+	 * Sends string representation of the file to database to be searched
+	 * and returns the File.
+	 * @param theFile The string representation of the File
+	 * @return The File.
+	 */
+	public File findFile(String theFile) {
+		return myDataBase.fileSearch(theFile);
 	}
 	
 	public void setCurrentFolder(Folder theFolder) {

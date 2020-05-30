@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Main model class which interact with controller.
@@ -117,4 +118,75 @@ public class Database {
         	throw new IOException();
         }
 	}
+	
+	/**
+	 * Performs search for specified file
+	 * @param theFile String representation of the File
+	 * @return The Folder the File is in, null otherwise
+	 */
+	public File fileSearch(String theFile) {
+		final File foundFile = searchHelp(myCurrentFolder, theFile);
+		System.out.println(foundFile);
+		return foundFile;
+		
+	}
+	
+	/**
+	 * Recursive helper method searches for the specified file, and returns the folder
+	 * that the file resides in, or null if no file.
+	 * @param theData Should be a folder.
+	 * @param theFile The string that the file should match
+	 * @return targetFolder The Folder the File is in, null otherwise.
+	 */
+	private File searchHelp(Data theData, String theFile) {
+		System.out.println("METHOD START");
+		File targetFile = null;
+		if (Objects.nonNull(theData)) {
+			if (theData instanceof model.Folder) {
+				for (Data x : ((Folder) theData).getDataList()) {
+					if (x instanceof model.FileClass) {
+						if (x.toString().equals(theFile.toString())) {
+							System.out.println(x.toString() + " Match");
+							targetFile = ((FileClass) x).getFile();
+							System.out.println(targetFile);
+							
+							
+						} 
+					} else if (x instanceof model.Folder) {
+						
+						searchHelp(x, theFile);
+						
+					}
+				}
+			}
+		}
+		System.out.println("HERE ->" + targetFile);
+		return targetFile;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
