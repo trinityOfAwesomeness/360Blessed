@@ -1,8 +1,10 @@
 package gui;
 
 import java.awt.BorderLayout;
+import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -20,6 +22,7 @@ import model.Folder;
  * 
  * @author Seoungdeok Jeon
  * @author Tatiana Linardopoulou
+ * @author Adam H Hall
  */
 public class MainFrame extends JFrame {
 
@@ -72,7 +75,6 @@ public class MainFrame extends JFrame {
 				myContentPanel.update();
 				mySidePanel.update();
 			}
-
 			@Override
 			public void goBackEventOccurred() {
 				try {
@@ -95,6 +97,8 @@ public class MainFrame extends JFrame {
 					mySidePanel.setCurrentFolder(myController.getCurrentFolder());
 					myContentPanel.update();
 					mySidePanel.update();
+					repaint();
+					revalidate();
 				} catch (IndexOutOfBoundsException e) {
 					JOptionPane.showMessageDialog(MainFrame.this, "You are seeing the main page!", "Error",
 							JOptionPane.ERROR_MESSAGE);
@@ -110,6 +114,26 @@ public class MainFrame extends JFrame {
 			public void editEmailEventOccurred(String email) {
 				myController.getSettings().setUserEmail(email);
 			}
+			@Override
+			public void editSearchEventOccurred(String theFile)  {
+			    final File foundFile = myController.findFile(theFile);
+			    if (foundFile != null) {
+			    	if (Desktop.isDesktopSupported()) {
+			    		Desktop desktop = Desktop.getDesktop();
+			    		if (foundFile.exists()) {
+			    			try {
+								desktop.open(foundFile);
+							} catch (IOException e) {
+								System.out.println("Failed to open file");
+							}
+			    		}
+			    	}
+			    			    	
+			    } else {
+				JOptionPane.showMessageDialog(null, "File Not Found!", "Error",
+						JOptionPane.ERROR_MESSAGE);
+			    }
+			} 
 
 		});
 

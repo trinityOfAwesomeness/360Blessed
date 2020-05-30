@@ -60,6 +60,8 @@ public class Folder implements Data {
 		myDataList.remove(theFile);
 	}
 	
+
+	
 	public String toString() {
 		return myName;
 	}
