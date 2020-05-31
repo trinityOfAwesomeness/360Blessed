@@ -16,7 +16,7 @@ import model.ProjectVersion;
  * @version Spring 2020
  *
  */
-public class VersionTest {
+public class ProjectVersionTest {
 	
 	/** The ProjectVersion object that will be used for testing. */
 	private final ProjectVersion versionTest = new ProjectVersion();

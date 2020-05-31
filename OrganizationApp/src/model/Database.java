@@ -31,26 +31,18 @@ public class Database {
 
 	public void addFolder(Folder theFolder) {
 		myCurrentFolder.addFolder(theFolder);
-		
-		System.out.println(myCurrentFolder.getDataList());
 	}
 	
 	public void removeFolder(Folder theFolder) {
 		myCurrentFolder.removeFolder(theFolder);
-		
-		System.out.println(myCurrentFolder.getDataList());
 	}
 
 	public void addFile(FileClass theFile) {
 		myCurrentFolder.addFile(theFile);
-		
-		System.out.println(myCurrentFolder.getDataList());
 	}
 	
 	public void removeFile(FileClass theFile) {
 		myCurrentFolder.removeFile(theFile);
-		
-		System.out.println(myCurrentFolder.getDataList());
 	}
 	
 	/**
@@ -68,7 +60,6 @@ public class Database {
 	public void setCurrentFolder(Folder theFolder) {
 		myPreviousFolders.add(myCurrentFolder);
 		myCurrentFolder = theFolder;
-		System.out.println(myPreviousFolders);
 	}
 	
 	public void goToPreviousFolder() throws IndexOutOfBoundsException {
@@ -159,29 +150,3 @@ public class Database {
 		return targetFile;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
