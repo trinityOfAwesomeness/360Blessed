@@ -1,3 +1,4 @@
+//ToolBar class for our TCSS360 project
 package gui;
 
 import java.awt.Image;
@@ -17,16 +18,33 @@ import application.App;
 import model.FileClass;
 import model.Folder;
 
+/**
+ * This class manages our ToolBar in the app's GUI.
+ * @author Seoungdeok Jeon
+ *
+ */
 public class ToolBar extends JToolBar {
 
+	/** Default serial ID. */
+	private static final long serialVersionUID = 1L;
+	/** The JFrame associated with the ToolBar. */
 	private JFrame myFrame;
+	/** Button that adds a folder. */
 	private JButton myAddFolderBtn;
+	/** Button that adds a file. */
 	private JButton myAddFileBtn;
+	/** Button the goes back one folder. */
 	private JButton myBackBtn;
+	/** Button that goes to home folder. */
 	private JButton myHomeBtn;
-	
+	/** Listener for ToolBar. */
 	private ToolBarListener myToolBarListener;
-
+	
+	/**
+	 * Constructor for the ToolBar class
+	 * @param theFrame The associated JFrame.
+	 * @author Seoungdeok Jeon
+	 */
 	public ToolBar(JFrame theFrame) {
 		myFrame = theFrame;
 		myAddFolderBtn = new JButton();
@@ -74,11 +92,20 @@ public class ToolBar extends JToolBar {
 		add(myAddFolderBtn);
 		add(myAddFileBtn);
 	}
-
+	
+	/**
+	 * Sets the ToolBar's listener.
+	 * @param theListener The listener being set.
+	 * @author Seoungdeok Jeon
+	 */
 	public void setToolBarListener(ToolBarListener theListener) {
 		myToolBarListener = theListener;
 	}
 	
+	/**
+	 * The ToolBar's action listeners
+	 * @author Seoungdeok Jeon
+	 */
 	public void addActionListeners() {
 		// The actual functionality for this button is in the MainFrame, 
 		// which can interact with the controller. 

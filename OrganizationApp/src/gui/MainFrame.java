@@ -1,3 +1,4 @@
+//View class for our TCSS360 project.
 package gui;
 
 import java.awt.BorderLayout;
@@ -28,15 +29,20 @@ public class MainFrame extends JFrame {
 
 	/** Automatic serial version to quiet eclipse. */
 	private static final long serialVersionUID = 1L;
+	/** Instance of our controller. */
 	private Controller myController;
+	/** Instance of our content panel. */
 	private ContentPanel myContentPanel;
-
+	/** Instance of our TopPanel. */
 	private TopPanel myTopPanel;
 
 	/**
 	 * Constructor for Mainframe object.
 	 * Creates Mainframe and components.
 	 * @param the version the program version
+	 * @author Seoungdeok Jeon
+	 * @author Tatiana Linardopoulou
+	 * @author Adam Hall
 	 */
 	public MainFrame() {
 		myController = new Controller();
@@ -96,7 +102,7 @@ public class MainFrame extends JFrame {
 				}
 			}
 		});
-		myTopPanel.setTopBarListener(new TopBarListener() {
+		myTopPanel.setTopPanelListener(new TopPanelListener() {
 			@Override
 			public void editNameEventOccurred(String name) {
 				myController.getSettings().setUserName(name);
@@ -143,6 +149,9 @@ public class MainFrame extends JFrame {
 	 * Constructor for menuBar object.
 	 * Creates menuBar and adds menu bar components.
 	 * @return menuBar the menu bar
+	 * @author Seoungdeok James
+	 * @author Tatiana Linardopoulou
+	 * @author Adam Hall
 	 */
 	public JMenuBar createMenuBar() {
 		JMenuBar menuBar = new JMenuBar();

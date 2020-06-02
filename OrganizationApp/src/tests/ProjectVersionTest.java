@@ -13,7 +13,6 @@ import model.ProjectVersion;
  * This class tests the functionality for our version method that populates
  * our about button in the about button using JUNIT4
  * @author Adam H Hall
- * @version Spring 2020
  *
  */
 public class ProjectVersionTest {

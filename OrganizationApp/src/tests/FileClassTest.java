@@ -1,3 +1,4 @@
+//FileClass test for our TCSS360 project
 package tests;
 
 import static org.junit.Assert.assertEquals;
@@ -8,7 +9,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import model.FileClass;
-
+/**
+ * This class tests the FileClass methods
+ * @author Tatiana Linardopoulou
+ *
+ */
 public class FileClassTest {
 
 	/** Test fixture. */

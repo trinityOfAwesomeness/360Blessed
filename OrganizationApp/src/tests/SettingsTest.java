@@ -1,3 +1,4 @@
+//Test class for our TCSS360 project
 package tests;
 
 import static org.junit.Assert.*;

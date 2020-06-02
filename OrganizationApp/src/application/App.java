@@ -1,3 +1,4 @@
+//This class runs our TCSS360 application
 package application;
 import javax.swing.SwingUtilities;
 import gui.MainFrame;
@@ -13,6 +14,7 @@ public class App {
 	/**
 	 * Runs GUI.
 	 * @param args
+	 * @author Tatiana Linardopoulou
 	 */
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {

@@ -1,9 +1,9 @@
+//This class is the content panel for our TCSS360 project. 
 package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Desktop;
-import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -20,7 +20,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
-import javax.swing.JScrollPane;
 
 import application.App;
 import model.Data;
@@ -36,19 +35,29 @@ public class ContentPanel extends JPanel implements ActionListener {
 
 	/** Serial version to quiet eclipse. */
 	private static final long serialVersionUID = 1L;
+	/** A reference to the current folder. */
 	private Folder myCurrentFolder;
+	/** A reference to this. */
 	private JPanel myContentPanel;
+	/** A reference to the popup menu. */
 	private JPopupMenu myPopupMenu;
+	/** Target name for the popup menu. */
 	private String mySelectedPopupMenuTargetName;
+	/** A reference to the menu item. */
 	private JMenuItem myMenuItem;
+	/** The folder clicked listeners. */
 	private FolderClickedListener myFolderClickedListener;
+	/** Our folder label. */
 	private JLabel myFolderLabel;
+	/** Our file label. */
 	private JLabel myFileLabel;
 
 
 	/**
 	 * Constructor for ContentPanel object.
 	 * Builds content Panel with folders.
+	 * @author Tatiana Linardopoulou
+	 * @author Seoungdeok Jeon
 	 */
 	public ContentPanel() {
 		myContentPanel = new JPanel();
@@ -183,6 +192,7 @@ public class ContentPanel extends JPanel implements ActionListener {
 	 * Displays updated data in content panel.
 	 * 
 	 * @param e the Action Event
+	 * @author Seoungdeok James
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

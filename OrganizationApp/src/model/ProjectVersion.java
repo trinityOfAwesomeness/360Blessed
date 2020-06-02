@@ -1,3 +1,4 @@
+//Project version class for our TCSS360 class
 package model;
 
 /**
@@ -13,6 +14,7 @@ public class ProjectVersion {
 	
 	/**
 	 * Constructor for ProjectVersion object.
+	 * @author Tatiana Linardopoulou
 	 */
 	public ProjectVersion() {
 		
@@ -21,6 +23,7 @@ public class ProjectVersion {
 	/**
 	 * Sets project version number.
 	 * @param number the version number
+	 * @author Tatiana Linardopoulou
 	 */
 	public void setVersion(final double theNumber) {
 		myVersion = theNumber;
@@ -30,6 +33,7 @@ public class ProjectVersion {
 	/**
 	 * Gets project version number.
 	 * @return myProjectVersion the project version.
+	 * @author Tatiana Linardopoulou
 	 */
 	public double getVersion() {
 		return myVersion;

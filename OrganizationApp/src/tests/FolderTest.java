@@ -1,3 +1,4 @@
+//Test class four Folder class in our TCSS360 project
 package tests;
 
 import static org.junit.Assert.*;
@@ -9,7 +10,11 @@ import org.junit.Test;
 
 import model.FileClass;
 import model.Folder;
-
+/**
+ * This test class tests the methods in the Folder class
+ * @author Seoungdeok Jeon
+ *
+ */
 public class FolderTest {
 
 	/** Test fixture. */

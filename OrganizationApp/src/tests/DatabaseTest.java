@@ -1,3 +1,4 @@
+// Tests the Database class
 package tests;
 
 import static org.junit.Assert.*;
@@ -11,7 +12,11 @@ import org.junit.Test;
 import model.Database;
 import model.FileClass;
 import model.Folder;
-
+/**
+ * Testing class for our Database methods
+ * @author Seoungdeok Jeon
+ *
+ */
 public class DatabaseTest {
 
 	/** Test fixture. */
