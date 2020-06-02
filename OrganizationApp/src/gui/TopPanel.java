@@ -61,7 +61,6 @@ public class TopPanel extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String file = searchField.getText();
-				System.out.println(file);
 				myTopBarListener.editSearchEventOccurred(file);
 			}
 		

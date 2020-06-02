@@ -30,7 +30,6 @@ public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private Controller myController;
 	private ContentPanel myContentPanel;
-	private SidePanel mySidePanel;
 
 	private TopPanel myTopPanel;
 
@@ -42,12 +41,10 @@ public class MainFrame extends JFrame {
 	public MainFrame() {
 		myController = new Controller();
 		myContentPanel = new ContentPanel();
-		mySidePanel = new SidePanel();
 		myTopPanel = new TopPanel(this);
 		setLayout(new BorderLayout());
 
 		myContentPanel.setCurrentFolder(myController.getCurrentFolder());
-		mySidePanel.setCurrentFolder(myController.getCurrentFolder());
 
 
 		myContentPanel.setFolderClickedListener(new FolderClickedListener() {
@@ -55,9 +52,7 @@ public class MainFrame extends JFrame {
 			public void folderClickedEventOccurred(Folder folder) {
 				myController.setCurrentFolder(folder);
 				myContentPanel.setCurrentFolder(myController.getCurrentFolder());
-				mySidePanel.setCurrentFolder(myController.getCurrentFolder());
 				myContentPanel.update();
-				mySidePanel.update();
 			}
 		});
 
@@ -68,23 +63,19 @@ public class MainFrame extends JFrame {
 			public void addFolderEventOccurred(Folder folder) {
 				myController.addFolder(folder);
 				myContentPanel.update();
-				mySidePanel.update();
 			}
 
 			@Override
 			public void addFileEventOccurred(FileClass file) {
 				myController.addFile(file);
 				myContentPanel.update();
-				mySidePanel.update();
 			}
 			@Override
 			public void goBackEventOccurred() {
 				try {
 					myController.goToPreviousFolder();
 					myContentPanel.setCurrentFolder(myController.getCurrentFolder());
-					mySidePanel.setCurrentFolder(myController.getCurrentFolder());
 					myContentPanel.update();
-					mySidePanel.update();
 				} catch (IndexOutOfBoundsException e) {
 					JOptionPane.showMessageDialog(MainFrame.this, "Can't go back anymore!", "Error",
 							JOptionPane.ERROR_MESSAGE);
@@ -96,9 +87,7 @@ public class MainFrame extends JFrame {
 				try {
 					myController.goToHomeFolder();
 					myContentPanel.setCurrentFolder(myController.getCurrentFolder());
-					mySidePanel.setCurrentFolder(myController.getCurrentFolder());
 					myContentPanel.update();
-					mySidePanel.update();
 					repaint();
 					revalidate();
 				} catch (IndexOutOfBoundsException e) {
@@ -141,7 +130,6 @@ public class MainFrame extends JFrame {
 
 		setJMenuBar(createMenuBar());
 		add(myContentPanel, BorderLayout.CENTER);
-		add(mySidePanel, BorderLayout.WEST);
 		add(myTopPanel, BorderLayout.NORTH);
 
 

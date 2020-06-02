@@ -3,6 +3,7 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Desktop;
+import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -20,6 +21,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
+
 import application.App;
 import model.Data;
 import model.FileClass;
@@ -51,10 +53,7 @@ public class ContentPanel extends JPanel implements ActionListener {
 	public ContentPanel() {
 		myContentPanel = new JPanel();
 		setLayout(new BorderLayout());
-		String title = String.format("%-80s%-86s%s", "Name", "Date Created", "Type"); 
-		JLabel colName = new JLabel(title);
-		add(colName, BorderLayout.NORTH);
-		add(new JScrollPane(myContentPanel), BorderLayout.CENTER);
+		add(myContentPanel, BorderLayout.CENTER);
 		setBorder(BorderFactory.createLineBorder(Color.black));
 		myPopupMenu = new JPopupMenu();
 		myMenuItem = new JMenuItem("Delete");
@@ -82,9 +81,14 @@ public class ContentPanel extends JPanel implements ActionListener {
 				Image newimg = image.getScaledInstance(25, 25,  java.awt.Image.SCALE_SMOOTH);
 				folderIcon = new ImageIcon(newimg);
 
-				myFolderLabel = new JLabel(data.getName());
-				myFolderLabel.setIcon(folderIcon);
+				StringBuilder sb = new StringBuilder(data.getName());
+				for(int i = 0; i < 300; i++) {
+					sb.append(" ");
+				}
+				myFolderLabel = new JLabel(sb.toString());
+				
 				myFolderLabel.setBorder(BorderFactory.createEtchedBorder());
+				myFolderLabel.setIcon(folderIcon);
 
 				//right click pop-up menu
 				MouseListener popupListener = new PopupListener(data.getName());
@@ -110,7 +114,11 @@ public class ContentPanel extends JPanel implements ActionListener {
 				Image newimg = image.getScaledInstance(25, 25,  java.awt.Image.SCALE_SMOOTH);
 				fileIcon = new ImageIcon(newimg);
 
-				myFileLabel = new JLabel(data.getName());
+				StringBuilder sb = new StringBuilder(data.getName());
+				for(int i = 0; i < 300; i++) {
+					sb.append(" ");
+				}
+				myFileLabel = new JLabel(sb.toString());
 				myFileLabel.setIcon(fileIcon);
 				myFileLabel.setBorder(BorderFactory.createEtchedBorder());
 
