@@ -127,6 +127,7 @@ public class Database {
 	/**
 	 * Get the user settings
 	 * @return The user's settings
+	 * @author Adam Hall
 	 */
 	public Settings getSettings() {
 		return mySettings;

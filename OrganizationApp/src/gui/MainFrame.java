@@ -55,6 +55,9 @@ public class MainFrame extends JFrame {
 
 		myContentPanel.setFolderClickedListener(new FolderClickedListener() {
 			@Override
+			/**
+			 * @author Adam Hall
+			 */
 			public void folderClickedEventOccurred(Folder folder) {
 				myController.setCurrentFolder(folder);
 				myContentPanel.setCurrentFolder(myController.getCurrentFolder());
@@ -66,17 +69,26 @@ public class MainFrame extends JFrame {
 		// it adds functionality here for tool bar.
 		myTopPanel.getToolBar().setToolBarListener(new ToolBarListener() {
 			@Override
+			/**
+			 * @author Adam Hall
+			 */
 			public void addFolderEventOccurred(Folder folder) {
 				myController.addFolder(folder);
 				myContentPanel.update();
 			}
 
 			@Override
+			/**
+			 * @author Adam Hall
+			 */
 			public void addFileEventOccurred(FileClass file) {
 				myController.addFile(file);
 				myContentPanel.update();
 			}
 			@Override
+			/**
+			 * @author Adam Hall
+			 */
 			public void goBackEventOccurred() {
 				try {
 					myController.goToPreviousFolder();
@@ -89,6 +101,9 @@ public class MainFrame extends JFrame {
 			}
 
 			@Override
+			/**
+			 * @author Adam Hall
+			 */
 			public void goHomeEventOccurred() {
 				try {
 					myController.goToHomeFolder();
@@ -104,14 +119,23 @@ public class MainFrame extends JFrame {
 		});
 		myTopPanel.setTopPanelListener(new TopPanelListener() {
 			@Override
+			/**
+			 * @author Tatiana Linardopoulou
+			 */
 			public void editNameEventOccurred(String name) {
 				myController.getSettings().setUserName(name);
 			}
 			@Override
+			/**
+			 * @author Tatiana Linardopoulou
+			 */
 			public void editEmailEventOccurred(String email) {
 				myController.getSettings().setUserEmail(email);
 			}
 			@Override
+			/**
+			 * @author Adam Hall
+			 */
 			public void editSearchEventOccurred(String theFile)  {
 			    final File foundFile = myController.findFile(theFile);
 			    if (foundFile != null) {
@@ -164,6 +188,9 @@ public class MainFrame extends JFrame {
 
 		aboutProgram.addActionListener(new ActionListener() {
 			@Override
+			/**
+			 * @author Tatiana Linardopoulou
+			 */
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(MainFrame.this, "Developers:\n"
 						+ "Adam Hall\n"
@@ -174,6 +201,9 @@ public class MainFrame extends JFrame {
 		});
 
 		importSettings.addActionListener(new ActionListener() {
+			/**
+			 * @author Tatiana Linardopoulou
+			 */
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser fileChooser = new JFileChooser();
 				if (fileChooser.showOpenDialog(MainFrame.this) == JFileChooser.APPROVE_OPTION) {
@@ -190,6 +220,9 @@ public class MainFrame extends JFrame {
 		});
 
 		exportSettings.addActionListener(new ActionListener() {
+			/**
+			 * @author Tatiana Linardopoulou
+			 */
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser fileChooser = new JFileChooser();
 				if (fileChooser.showSaveDialog(MainFrame.this) == JFileChooser.APPROVE_OPTION) {

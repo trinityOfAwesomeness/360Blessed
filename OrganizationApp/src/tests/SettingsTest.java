@@ -17,6 +17,10 @@ public class SettingsTest {
 
 	private Settings mySettings;
 	
+	/**
+	 * Test getting user name.
+	 * @author Tatiana Linardopoulou
+	 */
 	@Test
 	public void testGetUserName() {
 		mySettings = new Settings();
@@ -25,13 +29,21 @@ public class SettingsTest {
 		
 	}
 
+	/**
+	 * Test setting user name.
+	 * @author Tatiana Linardopoulou
+	 */
 	@Test
 	public void testSetUserName() {
 		mySettings = new Settings();
 		mySettings.setUserName("Jean-Luc Picard");
 		assertEquals("Jean-Luc Picard", mySettings.getUserName());
 	}
-
+	
+	/**
+	 * Test getting user email.
+	 * @author Tatiana Linardopoulou
+	 */
 	@Test
 	public void testGetUserEmail() {
 		mySettings = new Settings();
@@ -39,6 +51,10 @@ public class SettingsTest {
 		assertEquals("DarthVader@starwars.com", mySettings.getUserEmail());
 	}
 
+	/**
+	 * Test setting user email.
+	 * @author Tatiana Linardopoulou
+	 */
 	@Test
 	public void testSetUserEmail() {
 		mySettings = new Settings();
@@ -46,6 +62,10 @@ public class SettingsTest {
 		assertEquals("picard@starfleet.com", mySettings.getUserEmail());
 	}
 
+	/**
+	 * Test getting toString.
+	 * @author Tatiana Linardopoulou
+	 */
 	@Test
 	public void testToString() {
 		mySettings = new Settings();

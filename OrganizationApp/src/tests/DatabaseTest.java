@@ -15,6 +15,7 @@ import model.Folder;
 /**
  * Testing class for our Database methods
  * @author Seoungdeok Jeon
+ * @author Adam Hall
  *
  */
 public class DatabaseTest {
@@ -22,6 +23,10 @@ public class DatabaseTest {
 	/** Test fixture. */
 	private Database myTestDatabase;
 	
+	/**
+	 * Set up before each test.
+	 * @author Seoungdeok Jeon
+	 */
 	@Before
 	public void setUp() {
 		myTestDatabase = new Database();
@@ -29,6 +34,7 @@ public class DatabaseTest {
 
 	/**
 	 * Testing addFolder method.
+	 * @author Seoungdeok Jeon
 	 */
 	@Test
 	public void testAddFolder() {
@@ -38,6 +44,7 @@ public class DatabaseTest {
 
 	/**
 	 * Testing removeFolder method.
+	 * @author Seoungdeok Jeon
 	 */
 	@Test
 	public void testRemoveFolder() {
@@ -50,6 +57,7 @@ public class DatabaseTest {
 
 	/**
 	 * Testing addFile method.
+	 * @author Seoungdeok Jeon
 	 */
 	@Test
 	public void testAddFile() {
@@ -61,6 +69,7 @@ public class DatabaseTest {
 
 	/**
 	 * Testing removeFile method.
+	 * @author Seoungdeok Jeon
 	 */
 	@Test
 	public void testRemoveFile() {
@@ -74,6 +83,7 @@ public class DatabaseTest {
 
 	/**
 	 * Testing getCurrentFolder method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testGetCurrentFolder() {
@@ -84,6 +94,7 @@ public class DatabaseTest {
 
 	/**
 	 * Testing setCurrentFolder method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testSetCurrentFolder() {
@@ -94,6 +105,7 @@ public class DatabaseTest {
 
 	/**
 	 * Testing goToPreviousFolder method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testGoToPreviousFolder() {
@@ -108,6 +120,7 @@ public class DatabaseTest {
 
 	/**
 	 * Testing goToHomeFolder method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testGoToHomeFolder() {
@@ -122,6 +135,7 @@ public class DatabaseTest {
 
 	/**
 	 * Testing getProjectVersion method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testGetProjectVersion() {
@@ -130,6 +144,7 @@ public class DatabaseTest {
 
 	/**
 	 * Testing getSettings method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testGetSettings() {
@@ -139,6 +154,7 @@ public class DatabaseTest {
 
 	/**
 	 * Testing fileSearch method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testFileSearch() {

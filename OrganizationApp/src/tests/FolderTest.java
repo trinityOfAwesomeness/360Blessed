@@ -13,6 +13,7 @@ import model.Folder;
 /**
  * This test class tests the methods in the Folder class
  * @author Seoungdeok Jeon
+ * @author Adam Hall
  *
  */
 public class FolderTest {
@@ -22,6 +23,7 @@ public class FolderTest {
 
 	/**
 	 * This method runs before EVERY test case. Use it to re-initialize test fixtures. 
+	 * @author Seoungdeok Jeon
 	 */
 	@Before
 	public void setUp() {
@@ -30,6 +32,7 @@ public class FolderTest {
 	
 	/**
 	 * Testing constructor for Folder class.
+	 * @author Seoungdeok Jeon
 	 */
 	@Test
 	public void testFolder() {
@@ -39,6 +42,7 @@ public class FolderTest {
 
 	/**
 	 * Testing getName method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testGetName() {
@@ -47,6 +51,7 @@ public class FolderTest {
 
 	/**
 	 * Testing setName method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testSetName() {
@@ -56,6 +61,7 @@ public class FolderTest {
 
 	/**
 	 * Testing getDataList method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testGetDataList() {
@@ -66,6 +72,7 @@ public class FolderTest {
 
 	/**
 	 * Testing addFolder method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testAddFolder() {
@@ -76,6 +83,7 @@ public class FolderTest {
 
 	/**
 	 * Testing removeFolder method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testRemoveFolder() {
@@ -89,6 +97,7 @@ public class FolderTest {
 
 	/**
 	 * Testing addFile method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testAddFile() {
@@ -100,6 +109,7 @@ public class FolderTest {
 
 	/**
 	 * Testing removeFile method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testRemoveFile() {
@@ -113,6 +123,7 @@ public class FolderTest {
 
 	/**
 	 * Testing toString method.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testToString() {

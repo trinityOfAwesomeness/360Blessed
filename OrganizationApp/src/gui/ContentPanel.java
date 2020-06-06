@@ -76,6 +76,8 @@ public class ContentPanel extends JPanel implements ActionListener {
 
 	/**
 	 * Updates the contentPanel with elements in myDataList.
+	 * @author Tatiana Linardopoulou
+	 * @author Seoungdeok Jeon
 	 */
 	public void update() {
 		myContentPanel.removeAll();
@@ -182,7 +184,7 @@ public class ContentPanel extends JPanel implements ActionListener {
 			}
 		}
 
-		public PopupListener( String name) {
+		public PopupListener(String name) {
 			this.name = name;
 		}
 	}
@@ -192,7 +194,7 @@ public class ContentPanel extends JPanel implements ActionListener {
 	 * Displays updated data in content panel.
 	 * 
 	 * @param e the Action Event
-	 * @author Seoungdeok James
+	 * @author Seoungdeok Jeon
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
