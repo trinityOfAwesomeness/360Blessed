@@ -12,7 +12,7 @@ import model.ProjectVersion;
 /**
  * This class tests the functionality for our version method that populates
  * our about button in the about button using JUNIT4
- * @author Adam H Hall
+ * @author Adam Hall
  *
  */
 public class ProjectVersionTest {
@@ -24,6 +24,7 @@ public class ProjectVersionTest {
 	
 	/**
 	 * This methods sets up the testing.
+	 * @author Adam Hall
 	 */
 	@Before
 	public void setUp() {
@@ -33,6 +34,8 @@ public class ProjectVersionTest {
 	/**
 	 * This method tests the accessor method for 'getting' the version
 	 * number.
+	 * @author Adam Hall
+	 * 
 	 */
 	@Test
 	public void testGetVersion() {
@@ -52,6 +55,7 @@ public class ProjectVersionTest {
 	/**
 	 * This method tests the mutator method for 'setting' the version
 	 * number.
+	 * @author Adam Hall
 	 */
 	@Test
 	public void testSetVersion() {

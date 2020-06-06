@@ -19,8 +19,10 @@ public class FileClassTest {
 	/** Test fixture. */
 	private FileClass myTestFile;
 	private File file = new File("project.pdf");
+	
 	/**
-	 * This method runs before EVERY test case. Use it to re-initialize test fixtures. 
+	 * Initializing test fixture. 
+	 * @author Tatiana Linardopoulou
 	 */
 	@Before
 	public void setUp() {
@@ -29,6 +31,7 @@ public class FileClassTest {
 
 	/**
 	 * Testing constructor for FileClass.
+	 * @author Tatiana Linardopoulou
 	 */
 	@Test
 	public void testFileClass() {
@@ -38,6 +41,7 @@ public class FileClassTest {
 	
 	/**
 	 * Testing getFile method.
+	 * @author Tatiana Linardopoulou
 	 */
 	@Test
 	public void testGetFile() {
@@ -46,6 +50,7 @@ public class FileClassTest {
 
 	/**
 	 * Testing getName method.
+	 * @author Tatiana Linardopoulou
 	 */
 	@Test
 	public void testGetName() {
@@ -54,6 +59,7 @@ public class FileClassTest {
 	
 	/**
 	 * Testing setName method.
+	 * @author Tatiana Linardopoulou
 	 */
 	@Test
 	public void testSetName() {
@@ -63,6 +69,7 @@ public class FileClassTest {
 	
 	/**
 	 * Testing toString method.
+	 * @author Tatiana Linardopoulou
 	 */
 	@Test
 	public void testToString() {
