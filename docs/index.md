@@ -3,6 +3,7 @@
 <strong>Team Members</strong>: Adam Hall,  Seoungdeok Jeon, Tatiana Linardopoulou<br/>
 <strong>Team Email</strong>: <tslinard@uw.edu>
 
+<h2> Links </h2>
 <a href="https://drive.google.com/file/d/1zSCXoBuWMKqr_jvfUZW668Gtgox0TBP-/view"><strong>Link: Domain Class and Sequence Diagram</strong></a>
 <br/>
 
