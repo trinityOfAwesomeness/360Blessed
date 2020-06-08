@@ -3,16 +3,16 @@
 <strong>Team Members</strong>: Adam Hall,  Seoungdeok Jeon, Tatiana Linardopoulou<br/>
 <strong>Team Email</strong>: <tslinard@uw.edu>
 
-<h2> Links </h2>
-<a href="https://drive.google.com/file/d/1zSCXoBuWMKqr_jvfUZW668Gtgox0TBP-/view"><strong>Link: Domain Class and Sequence Diagram</strong></a>
+<h3> Links </h3>
+<a href="https://drive.google.com/file/d/1zSCXoBuWMKqr_jvfUZW668Gtgox0TBP-/view"><strong>Domain Class and Sequence Diagram</strong></a>
 <br/>
 
-<a href="https://docs.google.com/presentation/d/1U5o4SJzmj-xRVAMoM6KkF1JahpoqXOP4Zp4TswFPpjA/edit#slide=id.p"> <strong>Link: Prototype</strong></a><br/>
-<a href="https://docs.google.com/document/d/1XhNQlQoiBpiptcfeayg5j-Mas5nPJBfojrfAQg5AwEU/edit"> <strong>Link: Deliverable 1</strong></a><br/>
-<a href="https://docs.google.com/document/d/1ZVS53ZBV_Y52UWiWxDeGIPJn-nVhZPSgAeBwK4YwHHU/edit"> <strong>Link: Deliverable 2</strong></a><br/>
-<a href="https://drive.google.com/open?id=113i0T3W1Y275NTIcpDa_UoAGSVCjQ7cx"> <strong>Link: Deliverable 3</strong></a>
+<a href="https://docs.google.com/presentation/d/1U5o4SJzmj-xRVAMoM6KkF1JahpoqXOP4Zp4TswFPpjA/edit#slide=id.p"> <strong>Prototype</strong></a><br/>
+<a href="https://docs.google.com/document/d/1XhNQlQoiBpiptcfeayg5j-Mas5nPJBfojrfAQg5AwEU/edit"> <strong>Deliverable 1</strong></a><br/>
+<a href="https://docs.google.com/document/d/1ZVS53ZBV_Y52UWiWxDeGIPJn-nVhZPSgAeBwK4YwHHU/edit"> <strong>Deliverable 2</strong></a><br/>
+<a href="https://drive.google.com/open?id=113i0T3W1Y275NTIcpDa_UoAGSVCjQ7cx"> <strong>Deliverable 3</strong></a>
 <br/>
-<a href="https://drive.google.com/open?id=1X8kJyKpha9ak0DrtdWM6itAfPQp9RKWT"> <strong>Link: Runnable Jar</strong></a>
+<a href="https://drive.google.com/open?id=1X8kJyKpha9ak0DrtdWM6itAfPQp9RKWT"> <strong>Runnable Jar</strong></a>
 <br/>
 
 <a href="https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0" target="_blank">Team task matrices:</a>
