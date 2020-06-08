@@ -15,7 +15,7 @@
 <br/>
 <a href="https://drive.google.com/open?id=113i0T3W1Y275NTIcpDa_UoAGSVCjQ7cx"> <strong>Deliverable 3</strong></a>
 <br/>
-<a href="https://drive.google.com/open?id=1X8kJyKpha9ak0DrtdWM6itAfPQp9RKWT"> <strong>Runnable Jar</strong></a>
+<a href="https://drive.google.com/open?id=1X8kJyKpha9ak0DrtdWM6itAfPQp9RKWT"> <strong>TrinitysOrgApp.jar</strong></a>
 <br/>
 
 <a href="https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0" target="_blank"><strong>Team task matrices:</strong></a>
