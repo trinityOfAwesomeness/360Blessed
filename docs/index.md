@@ -23,6 +23,7 @@
   src="https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0"
   style="width:100%; height:500px;"
 ></iframe>
+<br/>
 
 <a href="https://docs.google.com/document/d/1VuHiAVWgwR0IRgm4SgcGb2AdXvTUUsrBSnJY5_ZS8uc/edit"><strong>Team minutes log:</strong></a>
 <iframe
