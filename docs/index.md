@@ -18,13 +18,13 @@
 <a href="https://drive.google.com/open?id=1X8kJyKpha9ak0DrtdWM6itAfPQp9RKWT"> <strong>Runnable Jar</strong></a>
 <br/>
 
-<a href="https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0" target="_blank">Team task matrices:</a>
+<a href="https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0" target="_blank"><strong>Team task matrices:</strong></a>
 <iframe
   src="https://docs.google.com/spreadsheets/d/1Dxx__lm9wpbBzTXCeVnMcE22EXJMnJqr2aiAW0D5lKA/edit?ts=5e9f3992#gid=0"
   style="width:100%; height:500px;"
 ></iframe>
 
-<a href="https://docs.google.com/document/d/1VuHiAVWgwR0IRgm4SgcGb2AdXvTUUsrBSnJY5_ZS8uc/edit">Team minutes log:</a>
+<a href="https://docs.google.com/document/d/1VuHiAVWgwR0IRgm4SgcGb2AdXvTUUsrBSnJY5_ZS8uc/edit"><strong>Team minutes log:</strong></a>
 <iframe
   src="https://docs.google.com/document/d/1VuHiAVWgwR0IRgm4SgcGb2AdXvTUUsrBSnJY5_ZS8uc/edit"
   style="width:100%; height:500px;"
