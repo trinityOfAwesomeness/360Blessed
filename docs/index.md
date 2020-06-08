@@ -4,6 +4,7 @@
 <strong>Team Email</strong>: <tslinard@uw.edu>
 
 <strong> Links </strong>
+<br/>
 <a href="https://drive.google.com/file/d/1zSCXoBuWMKqr_jvfUZW668Gtgox0TBP-/view"><strong>Domain Class and Sequence Diagram</strong></a>
 <br/>
 <a href="https://docs.google.com/presentation/d/1U5o4SJzmj-xRVAMoM6KkF1JahpoqXOP4Zp4TswFPpjA/edit#slide=id.p"> <strong>Prototype</strong></a>
