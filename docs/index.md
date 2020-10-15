@@ -19,13 +19,7 @@
 <br/>
 <a href="https://drive.google.com/drive/u/2/mobile/folders/1UDADe7Gi5g0c2LXQaNmt-HMvt0a_eYa2/1MfxEwkud9aP02E77DSkhYC1Cdgr3di0_?sort=13&direction=a"><strong>Deliverable 3 zip</strong></a>
 <br/>
-<br/>
-<a href="https://docs.google.com/document/d/12TjiPLamkQV_481-1dKO1np7KrVPEHQpN5BisIlolus/edit" target="_blank"><strong>Spring 0 checklist:</strong></a>
-<iframe
-  src="https://docs.google.com/document/d/12TjiPLamkQV_481-1dKO1np7KrVPEHQpN5BisIlolus/edit"
-  style="width:100%; height:500px;"
-></iframe>
-<br/>
+
 
 <a href="https://docs.google.com/document/d/1VuHiAVWgwR0IRgm4SgcGb2AdXvTUUsrBSnJY5_ZS8uc/edit"><strong>Team minutes log:</strong></a>
 <iframe
